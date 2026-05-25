@@ -1,0 +1,26 @@
+Map<String, String> loginEn = {
+  'LoginScreen1': 'Log In',
+  'LoginScreen2': 'Mobile Number',
+  'LoginScreen3': 'Password',
+  'LoginScreen4': 'Forgot Password',
+  'LoginScreen5': 'Log In',
+  'LoginScreen6': 'Dont Have an Account?',
+  'LoginScreen7': 'Create New Account',
+  'LoginController1': 'This field is required',
+  'LoginController2': 'The phone number must be 9 digits',
+  'LoginController3': 'This field is required',
+  'LoginController4': 'The password must be at least 6 characters long',
+};
+Map<String, String> loginAr = {
+  'LoginScreen1': 'تسجيل الدخول',
+  'LoginScreen2': 'رقم الجوال',
+  'LoginScreen3': 'كلمة المرور',
+  'LoginScreen4': 'نسيت كلمة المرور',
+  'LoginScreen5': 'تسجيل الدخول',
+  'LoginScreen6': 'ليس لديك حساب؟',
+  'LoginScreen7': 'انشاء حساب جديد',
+  'LoginController1': 'هذاالحقل مطلوب',
+  'LoginController2': 'يجب أن يتكون رقم الهاتف من 9 أرقام',
+  'LoginController3': 'هذاالحقل مطلوب',
+  'LoginController4': 'يجب أن تكون كلمة المرور 6 أحرف على الأقل',
+};
