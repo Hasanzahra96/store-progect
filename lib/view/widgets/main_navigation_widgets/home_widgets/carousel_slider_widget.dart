@@ -9,41 +9,35 @@ class CarouselSliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      items: imageUrls.map((url) {
-        return Container(
-          margin: EdgeInsets.symmetric(horizontal: 4.r, vertical: 2.r),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.r), // ✅ responsive
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 8.r,
-                offset: Offset(0, 4.r),
-              ),
-            ],
-          ),
-          clipBehavior: Clip.antiAlias, // ✅ حواف ناعمة
-          child: Image.asset(
-            url,
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-            gaplessPlayback: true, // ✅ لا وميض
-            filterQuality: FilterQuality.high,
+    return CarouselSlider.builder(
+      itemCount: imageUrls.length,
+      itemBuilder: (context, index, realIndex) {
+        final url = imageUrls[index];
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 6.h),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12.r),
+            child: Image.asset(
+              url,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              gaplessPlayback: true,
+              filterQuality: FilterQuality.high,
+            ),
           ),
         );
-      }).toList(),
+      },
       options: CarouselOptions(
-        reverse: true,
         aspectRatio: 16 / 9,
         autoPlay: true,
-        autoPlayCurve: Curves.linearToEaseOut,
+        reverse: true,
+        autoPlayCurve: Curves.easeInOut,
         autoPlayAnimationDuration: const Duration(milliseconds: 800),
-        viewportFraction: 1, // ✅ شوية هواء من الجوانب
-        enlargeCenterPage: true, // ✅ تأثير جميل
-        enlargeFactor: 0.1,
-        autoPlayInterval: Duration(seconds: 4),
+        autoPlayInterval: const Duration(seconds: 4),
+        viewportFraction: 0.96,
+        enlargeCenterPage: true,
+        enlargeFactor: 0.12,
+        enableInfiniteScroll: true,
       ),
     );
   }

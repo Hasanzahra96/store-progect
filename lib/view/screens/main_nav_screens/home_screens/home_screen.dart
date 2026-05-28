@@ -62,13 +62,17 @@ class Homescreen extends GetView<HomeController> {
                                       Get.toNamed(AppRouts.propertiesScreen);
                                     },
                                     child: CircleAvatar(
-                                      maxRadius: 36.r,
-                                      backgroundColor: AppColor.browneColor,
-                                      child: Center(
-                                        child: SvgPicture.asset(
-                                          AppImageAssets.realestate,
-                                          color: AppColor.buttonColor,
-                                          height: 37.h,
+                                      maxRadius: 35.r,
+                                      backgroundColor: AppColor.buttonColor,
+                                      child: CircleAvatar(
+                                        maxRadius: 34.r,
+                                        backgroundColor: AppColor.browneColor,
+                                        child: Center(
+                                          child: SvgPicture.asset(
+                                            AppImageAssets.realestate,
+                                            color: AppColor.buttonColor,
+                                            height: 37.h,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -90,15 +94,19 @@ class Homescreen extends GetView<HomeController> {
                                       Get.toNamed(AppRouts.vechiclesScreen);
                                     },
                                     child: CircleAvatar(
-                                      maxRadius: 36.r,
-                                      backgroundColor: AppColor.browneColor,
-                                      child: Center(
-                                        child: SvgPicture.asset(
-                                          AppImageAssets.p,
+                                      maxRadius: 35.r,
+                                      backgroundColor: AppColor.buttonColor,
+                                      child: CircleAvatar(
+                                        maxRadius: 34.r,
+                                        backgroundColor: AppColor.browneColor,
+                                        child: Center(
+                                          child: SvgPicture.asset(
+                                            AppImageAssets.p,
 
-                                          // ignore: deprecated_member_use
-                                          color: AppColor.buttonColor,
-                                          height: 33.h,
+                                            // ignore: deprecated_member_use
+                                            color: AppColor.buttonColor,
+                                            height: 33.h,
+                                          ),
                                         ),
                                       ),
                                     ),
