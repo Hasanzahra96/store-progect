@@ -67,7 +67,7 @@ class MainNavigationScreen extends StatelessWidget {
               )
             ],
           ),
-          drawerScrimColor: AppColor.whiteColor,
+          drawerScrimColor: AppColor.buttonColor.withOpacity(0.5),
           drawer: DrawerWidget(),
           body: pages[controller.selectedIndex],
           bottomNavigationBar: NavBarWidget(),

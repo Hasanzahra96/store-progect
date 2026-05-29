@@ -36,7 +36,7 @@ class CarouselSliderWidget extends StatelessWidget {
         autoPlayInterval: const Duration(seconds: 4),
         viewportFraction: 0.96,
         enlargeCenterPage: true,
-        enlargeFactor: 0.12,
+        enlargeFactor: 0.1,
         enableInfiniteScroll: true,
       ),
     );
