@@ -26,6 +26,10 @@ class AppImageAssets {
   //icons
   static const String costumerservice = '$rootIcons/costumerService.svg';
   static const String car = '$rootIcons/car.svg';
+  static const String facebook = '$rootIcons/facebook.svg';
+  static const String instegram = '$rootIcons/instegram.svg';
+  static const String twitter = '$rootIcons/twitter.svg';
+  static const String whatsapp = '$rootIcons/whatsapp.svg';
   //car
   static const String chevrolet = '$rootIcons/chevrolet.svg';
   static const String ford = '$rootIcons/ford.svg';
