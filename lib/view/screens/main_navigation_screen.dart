@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:store/controller/main_nav_controller/main_navigation_controller.dart';
 import 'package:get/get.dart';
 import 'package:store/core/constant/color.dart';
-import 'package:store/view/screens/main_nav_screens/favorite_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/home_screen.dart';
-import 'package:store/view/screens/main_nav_screens/my_ads_screen.dart';
-import 'package:store/view/screens/main_nav_screens/my_follows_screen.dart';
-import 'package:store/view/widgets/main_navigation_widgets/drawer_widget.dart';
-import 'package:store/view/widgets/main_navigation_widgets/floating_action_widget.dart';
-import 'package:store/view/widgets/main_navigation_widgets/nav_bar_widget.dart';
+import 'package:store/core/utile/custom_search.dart';
+import 'package:store/data/datasource/static/drop_down_list.dart';
+import 'package:store/view/screens/main_screens/favorite_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/home_screen.dart';
+import 'package:store/view/screens/main_screens/my_ads_screen.dart';
+import 'package:store/view/screens/main_screens/my_follows_screen.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widget.dart';
+import 'package:store/view/widgets/main_widgets/floating_action_widget.dart';
+import 'package:store/view/widgets/main_widgets/nav_bar_widget.dart';
 
 class MainNavigationScreen extends StatelessWidget {
   MainNavigationScreen({super.key});
@@ -18,10 +20,10 @@ class MainNavigationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<MainNavigationcontroller>(builder: (controller) {
       List<Widget> pages = [
-        Homescreen(),
-        FavoriteScreen(),
-        MyAdsScreen(),
-        MyFollowsScreen()
+        const Homescreen(),
+        const FavoriteScreen(),
+        const MyAdsScreen(),
+        const MyFollowsScreen()
       ];
       // Widget activePage;
       // switch (controller.selectedIndex) {
@@ -43,7 +45,7 @@ class MainNavigationScreen extends StatelessWidget {
 
       return Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'logo',
               style: TextStyle(
                 color: AppColor.whiteColor,
@@ -58,7 +60,10 @@ class MainNavigationScreen extends StatelessWidget {
             ),
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  CustomSearch searchDelegate = CustomSearch(allRegons);
+                  showSearch(context: context, delegate: searchDelegate);
+                },
                 icon: const Icon(Icons.search),
               ),
               IconButton(
@@ -68,9 +73,9 @@ class MainNavigationScreen extends StatelessWidget {
             ],
           ),
           drawerScrimColor: AppColor.buttonColor.withOpacity(0.5),
-          drawer: DrawerWidget(),
+          drawer: const DrawerWidget(),
           body: pages[controller.selectedIndex],
-          bottomNavigationBar: NavBarWidget(),
+          bottomNavigationBar: const NavBarWidget(),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: const FloatingActionWidget());
