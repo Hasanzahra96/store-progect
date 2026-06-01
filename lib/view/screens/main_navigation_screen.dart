@@ -8,7 +8,7 @@ import 'package:store/view/screens/main_screens/favorite_screen.dart';
 import 'package:store/view/screens/main_screens/home_screens/home_screen.dart';
 import 'package:store/view/screens/main_screens/my_ads_screen.dart';
 import 'package:store/view/screens/main_screens/my_follows_screen.dart';
-import 'package:store/view/widgets/main_widgets/drawer_widget.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widgets/drawer_widget.dart';
 import 'package:store/view/widgets/main_widgets/floating_action_widget.dart';
 import 'package:store/view/widgets/main_widgets/nav_bar_widget.dart';
 
