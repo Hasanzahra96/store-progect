@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/core/constant/image_assets.dart';
+import 'package:store/core/constant/routess.dart';
 import 'package:store/view/widgets/custom_list_tile.dart';
 import 'package:store/view/widgets/custom_text_rich.dart';
 
@@ -35,12 +37,16 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.person_outline_sharp,
             title: 'حسابي',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.myAccountScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.share_outlined,
             title: 'شارك التطبيق',
-            onTap: () {},
+            onTap: () {
+              //    Get.toNamed(AppRouts.shareAppScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.subscriptions_outlined,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store/core/constant/color.dart';
 
 class CustomRadio extends StatelessWidget {
   final int value;
@@ -16,13 +17,14 @@ class CustomRadio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
-      scale: 1.3.r,
+      scale: 1.1.r,
       child: Radio<int>(
         value: value,
         groupValue: groupValue,
         onChanged: onChanged,
         visualDensity: VisualDensity.compact,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        fillColor: WidgetStatePropertyAll(AppColor.buttonColor),
       ),
     );
   }

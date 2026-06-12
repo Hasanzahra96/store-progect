@@ -6,10 +6,15 @@ import 'package:store/view/widgets/custom_text.dart';
 class RadioRowWidget extends StatelessWidget {
   final Widget radio;
   final String title;
+  final double? fontsize;
+  final Color? color;
+
   const RadioRowWidget({
     super.key,
     required this.radio,
     required this.title,
+    this.fontsize,
+    this.color,
   });
 
   @override
@@ -17,7 +22,10 @@ class RadioRowWidget extends StatelessWidget {
     return Row(
       children: [
         radio,
-        CustomText(data: title, fontsize: 12.sp, color: AppColor.fontColor),
+        CustomText(
+            data: title,
+            fontsize: fontsize ?? 12.sp,
+            color: color ?? AppColor.fontColor),
       ],
     );
   }
