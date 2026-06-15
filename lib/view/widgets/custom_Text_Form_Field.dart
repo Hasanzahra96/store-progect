@@ -43,7 +43,7 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final isRtl = Directionality.of(context) == TextDirection.rtl;
+//    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: TextFormField(
@@ -51,7 +51,7 @@ class CustomTextFormField extends StatelessWidget {
         maxLines: maxLines,
         textAlignVertical: TextAlignVertical.center,
         //   textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-        //   textAlign: isRtl ? TextAlign.right : TextAlign.left,
+        //  textAlign: isRtl ? TextAlign.right : TextAlign.left,
         controller: controller,
         validator: validator,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -64,14 +64,6 @@ class CustomTextFormField extends StatelessWidget {
             ),
             fillColor: isborderSide ? fillColor : null,
             filled: isborderSide ? true : false,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: isborderSide
-                  ? BorderSide.none
-                  : BorderSide(
-                      color: bordercolor ?? AppColor.greyColor.withOpacity(0.3),
-                    ),
-            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
               borderSide: BorderSide(

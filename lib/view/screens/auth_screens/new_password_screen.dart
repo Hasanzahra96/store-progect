@@ -63,7 +63,7 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                       controller: controller.passwordController,
                       obscureText: controller.isobscare,
                       validator: (value) {
-                        return controller.passValidator();
+                        return controller.passValidator(value);
                       },
                       prefixIcon: IconButton(
                         icon: Icon(
@@ -93,7 +93,7 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                       controller: controller.confirmPasswordController,
                       obscureText: controller.isobsCareconfirm,
                       validator: (value) {
-                        return controller.passValidatorConfirm();
+                        return controller.passValidatorConfirm(value);
                       },
 
                       prefixIcon: IconButton(

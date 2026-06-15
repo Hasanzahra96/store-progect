@@ -17,6 +17,7 @@ Future<void> show(String title, String middleText, void Function() onTapYes,
     middleText: middleText,
     middleTextStyle: const TextStyle(fontSize: 12),
     titlePadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+
     actions: [
       Padding(
         padding: EdgeInsets.symmetric(vertical: 16.h),

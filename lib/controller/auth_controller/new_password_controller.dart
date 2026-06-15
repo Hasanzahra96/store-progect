@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:store/core/functions/valid_input.dart';
 
 class NewPasswordController extends GetxController {
   late TextEditingController passwordController;
@@ -9,28 +10,29 @@ class NewPasswordController extends GetxController {
   bool isobscare = true;
   bool isobsCareconfirm = true;
   //////////////////////////////////////// اختبار حقل كلمه السر
-  String? passValidator() {
-    if (passwordController.text.isEmpty) {
-      return "NewPasswordController1".tr;
-    }
-    if (passwordController.text.length < 6) {
-      return "NewPasswordController2".tr;
-    }
-    return null;
+  String? passValidator(val) {
+    // if (passwordController.text.isEmpty) {
+    //   return "NewPasswordController1".tr;
+    // }
+    // if (passwordController.text.length < 6) {
+    //   return "NewPasswordController2".tr;
+    // }
+    // return null;
+    return validInput(val, 6, 30, 'password');
   }
 
   //////////////////////////////////////// اختبار حقل تأكيد كلمه السر
-  String? passValidatorConfirm() {
-    if (confirmPasswordController.text.isEmpty) {
-      return "NewPasswordController3".tr;
-    }
-    // if (confirmPasswordController.text.length < 6) {
-    //   return "يجب أن تكون كلمة المرور 6 أحرف على الأقل";
+  String? passValidatorConfirm(val) {
+    // if (confirmPasswordController.text.isEmpty) {
+    //   return "NewPasswordController3".tr;
     // }
+    // // if (confirmPasswordController.text.length < 6) {
+    // //   return "يجب أن تكون كلمة المرور 6 أحرف على الأقل";
+    // // }
     if (passwordController.text != confirmPasswordController.text) {
       return "NewPasswordController4".tr;
     }
-    return null;
+    return validInput(val, 6, 30, 'password');
   }
 
 //////////////////////////////////////  تبديل ظهور كلمه السر

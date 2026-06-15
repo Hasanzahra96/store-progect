@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/phone_number.dart';
+import 'package:store/core/functions/valid_input.dart';
 
 class SingupController extends GetxController {
   late TextEditingController firstNameController;
@@ -21,39 +22,42 @@ class SingupController extends GetxController {
   ////////////////////////////////////// تغيير  رقم الموبايل
   void onChangedPhoneSingUP(PhoneNumber phone) {
     phoneNumber = phone;
-    print(phoneNumber);
+
     update();
   }
   ////////////////////////////////////// تغيير رمز الدوله
 
   void onCountryChangedSingUP(newCountryCode) {
     initialCountryCode = newCountryCode?.dialCode ?? '+963';
-    print(initialCountryCode);
+
     update();
   }
 
 ///////////////////////////////////// اختبار حقل الاسم الاول
-  String? firtNameValidatorSingUP() {
-    if (firstNameController.text.isEmpty) {
-      return "SingupController1".tr;
-    }
-    return null;
+  String? firtNameValidatorSingUP(val) {
+    return validInput(val, 6, 30, 'username');
+    // if (firstNameController.text.isEmpty) {
+    //   return "SingupController1".tr;
+    // }
+    // return null;
   }
 
 ////////////////////////////////////// اختبار حقل اسم العائله
-  String? lastNameValidatorSingUP() {
-    if (lastNameController.text.isEmpty) {
-      return "SingupController2".tr;
-    }
-    return null;
+  String? lastNameValidatorSingUP(val) {
+    return validInput(val, 6, 30, 'username');
+    // if (lastNameController.text.isEmpty) {
+    //   return "SingupController2".tr;
+    // }
+    // return null;
   }
 
   ///////////////////////////////// اختبار حقل الايميل
-  String? emailValidatorSingUP() {
-    if (emailController.text.isEmpty) {
-      return "SingupController3".tr;
-    }
-    return null;
+  String? emailValidatorSingUP(val) {
+    return validInput(val, 6, 30, 'email');
+    // if (emailController.text.isEmpty) {
+    //   return "SingupController3".tr;
+    // }
+    // return null;
   }
 
   ////////////////////////////////////// اختبار حقل رقم الموبايل
@@ -69,29 +73,32 @@ class SingupController extends GetxController {
   }
 
   //////////////////////////////////////// اختبار حقل كلمه السر
-  String? passValidatorSingUP() {
-    if (passwordController.text.isEmpty) {
-      return "SingupController6".tr;
-    }
-    if (passwordController.text.length < 6) {
-      return "SingupController7".tr;
-    }
-    return null;
+  String? passValidatorSingUP(val) {
+    return validInput(val, 6, 30, 'password');
+    // if (passwordController.text.isEmpty) {
+    //   return "SingupController6".tr;
+    // }
+    // if (passwordController.text.length < 6) {
+    //   return "SingupController7".tr;
+    // }
+    // return null;
   }
 
   //////////////////////////////////////// اختبار حقل تأكيد كلمه السر
-  String? passValidatorConfirmSingUP() {
-    if (confirmPasswordController.text.isEmpty) {
-      return "SingupController8".tr;
-    }
-    // if (confirmPasswordController.text.length < 6) {
-    //   return "SingupController9".tr;
+  String? passValidatorConfirmSingUP(val) {
+    // if (confirmPasswordController.text.isEmpty) {
+    //   return "SingupController8".tr;
     // }
+    // // if (confirmPasswordController.text.length < 6) {
+    // //   return "SingupController9".tr;
+    // // }
+
     if (passwordController.text != confirmPasswordController.text &&
         passwordController.text.isNotEmpty) {
       return "SingupController10".tr;
     }
-    return null;
+
+    return validInput(val, 6, 30, 'password');
   }
 
   //////////////////////////////////////   حفظ رقم الموبايل
@@ -118,11 +125,6 @@ class SingupController extends GetxController {
   void checkBoxChanged(value) {
     isCheck = value;
     update();
-  }
-
-  /////////////////////////////////////
-  bool isPasswordMatch() {
-    return passwordController.text == confirmPasswordController.text;
   }
 
   //////////////////////////////

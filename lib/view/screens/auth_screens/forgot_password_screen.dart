@@ -90,7 +90,7 @@ class ForgotPasswordScreen extends GetView<ForgotPasswordController> {
           final kayboardOpen = MediaQuery.of(context).viewInsets.bottom;
           return SafeArea(
             child: AnimatedPadding(
-              duration: Duration(milliseconds: 100),
+              duration: const Duration(milliseconds: 100),
               curve: Curves.easeInOut,
               padding: EdgeInsets.only(bottom: kayboardOpen),
               child: Padding(

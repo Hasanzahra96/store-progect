@@ -4,11 +4,11 @@ import 'package:store/controller/main_nav_controller/advertisement_controller/ve
 import 'package:store/view/widgets/main_widgets/advertisement_widgets/text_form_field_widget.dart';
 import 'package:store/view/widgets/main_widgets/advertisement_widgets/tow_column_widget.dart';
 
-class CarInteriorSection extends StatelessWidget {
-  CarInteriorSection({
+class CarInteriorSection extends GetView<VechiclesAdvertisementController> {
+  const CarInteriorSection({
     super.key,
   });
-  final VechiclesAdvertisementController controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return TowColumnWidget(

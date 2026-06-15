@@ -14,11 +14,11 @@ import 'package:store/view/widgets/main_widgets/advertisement_widgets/ckeck_box_
 import 'package:store/view/widgets/main_widgets/advertisement_widgets/text_form_field_widget.dart';
 import 'package:store/view/widgets/main_widgets/advertisement_widgets/tow_column_widget.dart';
 
-class CarExteriorSection extends StatelessWidget {
-  CarExteriorSection({
+class CarExteriorSection extends GetView<VechiclesAdvertisementController> {
+  const CarExteriorSection({
     super.key,
   });
-  final VechiclesAdvertisementController controller = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Column(

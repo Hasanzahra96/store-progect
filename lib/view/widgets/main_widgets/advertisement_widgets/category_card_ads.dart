@@ -58,10 +58,13 @@ class CategoryCard extends StatelessWidget {
                             color: const Color(0xFF42526E),
                           ),
                         ),
-                        Icon(
-                          Icons.arrow_back_ios,
-                          size: 16.sp,
-                          color: Colors.grey,
+                        Transform.rotate(
+                          angle: 1.5708 * 2, // تقريبًا 90 درجة بالراديان(
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            size: 16.sp,
+                            color: AppColor.greyColor,
+                          ),
                         ),
                       ],
                     ),
@@ -75,7 +78,7 @@ class CategoryCard extends StatelessWidget {
                     CustomText(
                       data: subtitle,
                       fontsize: 11.sp,
-                      color: Colors.grey,
+                      color: AppColor.greyColor,
                     ),
                   ],
                 ),
