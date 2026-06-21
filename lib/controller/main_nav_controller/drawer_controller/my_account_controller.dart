@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
+import 'package:store/core/functions/valid_input.dart';
 
 class MyAccountController extends GetxController {
+  final AddPhotoController addPhotoController = Get.find(tag: 'myaccount');
+  final GlobalKey<FormState> formKey1 = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey2 = GlobalKey<FormState>();
   late TextEditingController officeNameController;
   late TextEditingController numberController;
   late TextEditingController newPassController;
@@ -46,6 +51,15 @@ class MyAccountController extends GetxController {
   }
 
   ///////////////////////
+  String? passValidatorConfirm(val) {
+    if (newPassController.text != confirmPassController.text &&
+        newPassController.text.isNotEmpty) {
+      return "SingupController10".tr;
+    }
+
+    return validInput(val, 6, 30, 'password');
+  }
+
   @override
   void onInit() {
     officeNameController = TextEditingController();

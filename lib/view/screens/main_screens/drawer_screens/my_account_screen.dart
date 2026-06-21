@@ -8,6 +8,7 @@ import 'package:store/core/functions/back_dialog.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_button.dart';
 import 'package:store/view/widgets/main_widgets/drawer_widgets/account_type_widget.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widgets/add_photo_myaccount.dart';
 import 'package:store/view/widgets/main_widgets/drawer_widgets/list_tile_my_account_widget.dart';
 import 'package:store/view/widgets/main_widgets/drawer_widgets/password_edit_widget.dart';
 
@@ -28,32 +29,9 @@ class MyAccountScreen extends GetView<MyAccountController> {
             padding: EdgeInsets.all(16.r),
             child: Column(children: [
               Center(
-                child: Stack(
-                  alignment: Alignment.bottomLeft,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: const AssetImage(AppImageAssets.logo),
-                      radius: 60.r,
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: AppColor.whiteColor),
-                      padding: EdgeInsets.all(2.r),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColor.buttonColor),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.add),
-                          color: AppColor.whiteColor,
-                          visualDensity: VisualDensity.compact,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                child: AddPhotoMyaccount(
+                  addPhotoController: controller.addPhotoController,
+                ), ///////////////////////////قسم اضافة الصور
               ),
               SizedBox(
                 height: 32.h,
