@@ -25,13 +25,13 @@ class AddPhotoMyaccount extends StatelessWidget {
                     File(images.first.path),
                     fit: BoxFit.cover,
                     width: 120.w,
-                    height: 120.w,
+                    height: 120.h,
                   )
                 : Image.asset(
                     AppImageAssets.logo,
                     fit: BoxFit.cover,
                     width: 120.w,
-                    height: 120.w,
+                    height: 120.h,
                   ),
           ),
           Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
+import 'package:store/core/functions/back_dialog.dart';
 import 'package:store/core/functions/valid_input.dart';
 
 class MyAccountController extends GetxController {
@@ -58,6 +59,14 @@ class MyAccountController extends GetxController {
     }
 
     return validInput(val, 6, 30, 'password');
+  }
+
+  void showDialoge() {
+    showCustomDialog(
+        'هل أنت متأكد ؟',
+        'عند التأكيد سوف يتم حذف حسابك نهائيا و إلغاء الاشتراك و لن تتمكن من الرجوع إليه في المستقبل',
+        () {},
+        () {});
   }
 
   @override

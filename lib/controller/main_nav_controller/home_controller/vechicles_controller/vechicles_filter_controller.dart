@@ -55,7 +55,7 @@ class VechiclesFilterController extends GetxController {
 
 ////////////////////
   void showDialoge() {
-    show(
+    showCustomDialog(
       'هل أنت متأكد من الإجراء الحالي؟',
       'عند التأكيد سوف يتم حذف جميع البيانات المدخلة ',
       () {

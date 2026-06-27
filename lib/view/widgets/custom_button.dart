@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
         disabledColor: AppColor.button2Color,
         disabledTextColor: AppColor.greyColor,
         height: height ?? 58.h,
-        minWidth: minWidth ?? 354.w,
+        minWidth: minWidth ?? double.infinity,
         color: colorB,
         elevation: elevation,
         shape: RoundedRectangleBorder(

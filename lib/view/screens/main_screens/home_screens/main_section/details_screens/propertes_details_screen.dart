@@ -51,6 +51,9 @@ class PropertesDetailsScreen extends GetView<PropertiesDetailsController> {
                   SizedBox(height: 8.h),
                   AccountInfoWidget(
                     userName: controller.propertyItemModel.user ?? '',
+                    onPresseduserName: () {
+                      controller.goToAdvertscreen(controller.propertyItemModel);
+                    },
 
                     /// قسم معلومات الحساب
                     onPressedButton: () {},

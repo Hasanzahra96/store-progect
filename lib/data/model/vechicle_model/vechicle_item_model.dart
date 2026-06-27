@@ -14,6 +14,7 @@ class VechicleItemModel {
   final String? location;
   final int? price;
   final String? user;
+  final String? userId;
   final String? feuleType;
 
   VechicleItemModel({
@@ -32,6 +33,7 @@ class VechicleItemModel {
     this.price,
     this.images,
     this.user,
+    this.userId,
     this.feuleType,
   });
 }

@@ -144,7 +144,7 @@ class VechiclesAdvertisementController extends GetxController {
 
   ///////////////////////////
   void showDialoge() {
-    show(
+    showCustomDialog(
       'هل أنت متأكد من العودة إلى الوراء؟',
       'عند التأكيد سوف يتم الاحتفاظ بنسخة احتياطية من البيانات المدخلة',
       () {

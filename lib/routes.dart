@@ -12,6 +12,7 @@ import 'package:store/view/screens/main_screens/advertisement_screens/advertisem
 import 'package:store/view/screens/main_screens/advertisement_screens/aprove_posting_screen.dart';
 import 'package:store/view/screens/main_screens/advertisement_screens/properties_advertisemen_screen.dart';
 import 'package:store/view/screens/main_screens/advertisement_screens/vechicles_advertisement_screen.dart';
+import 'package:store/view/screens/main_screens/advertiser_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
 import 'package:store/view/screens/main_screens/favorite_screen.dart';
 import 'package:store/view/screens/main_screens/home_screens/main_section/details_screens/propertes_details_screen.dart';
@@ -40,6 +41,11 @@ List<GetPage<dynamic>>? routes = [
     name: AppRouts.myAccountScreen,
     page: () => MyAccountScreen(),
     binding: MyAccountBinding(),
+  ),
+  GetPage(
+    name: AppRouts.advertiserAccountScreen,
+    page: () => AdvertiserAccountScreen(),
+    binding: AdvertiserBinding(),
   ),
 
   //====================== welcome root ==========================================

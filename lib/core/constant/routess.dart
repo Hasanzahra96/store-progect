@@ -13,9 +13,10 @@ class AppRouts {
   static const String newPasswordScreen = '/newPasswordScreen';
   static const String verifyAccountScreen = '/verifyAccountScreen';
 
-  /////////////=====================main navigation root============///////////////
+  /////////////=====================main root============///////////////
   static const String mainNavigationScreen = '/mainNavigationScreen';
   static const String myAccountScreen = '/myAccountScreen';
+  static const String advertiserAccountScreen = '/advertiserAccountScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
   static const String vechiclesScreen = '/vechiclesScreen';

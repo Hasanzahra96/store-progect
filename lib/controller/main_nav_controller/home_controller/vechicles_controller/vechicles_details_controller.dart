@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:store/core/constant/routess.dart';
 import 'package:store/data/datasource/static/vechicles_lists/vechical_item_list.dart';
 import 'package:store/data/model/vechicle_model/vechicle_item_model.dart';
 
@@ -45,6 +46,14 @@ class VechiclesDetailsController extends GetxController {
     vechical = vehiclesItemList
         .where((element) => element.brandId == brandId)
         .toList();
+    update();
+  }
+
+  goToAdvertscreen(VechicleItemModel vechicleItemModel) {
+    Get.toNamed(AppRouts.advertiserAccountScreen, arguments: {
+      // 'vechicleItemModel': vechicleItemModel,
+      'user': vechicleItemModel.user,
+    });
     update();
   }
 

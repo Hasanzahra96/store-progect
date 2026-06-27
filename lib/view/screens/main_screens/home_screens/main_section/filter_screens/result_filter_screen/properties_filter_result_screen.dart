@@ -111,8 +111,10 @@ class PropertiesFilterResultScreen
                   ),
                 ),
                 Expanded(
-                  child: ListView.builder(
+                  child: ListView.separated(
                       itemCount: propertiesFilterResultList.length,
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 16.h),
                       itemBuilder: (context, index) {
                         final item = propertiesFilterResultList[index];
                         return FilterResultItem(

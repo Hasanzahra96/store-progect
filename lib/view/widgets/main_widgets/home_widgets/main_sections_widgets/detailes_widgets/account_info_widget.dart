@@ -6,6 +6,7 @@ import 'package:store/view/widgets/custom_text.dart';
 
 class AccountInfoWidget extends StatelessWidget {
   final String userName;
+  final Function()? onPresseduserName;
   final Function()? onPressedButton;
   final Function()? onPressedShare;
   final Function()? onPressedFav;
@@ -14,7 +15,8 @@ class AccountInfoWidget extends StatelessWidget {
       required this.userName,
       this.onPressedButton,
       this.onPressedShare,
-      this.onPressedFav});
+      this.onPressedFav,
+      this.onPresseduserName});
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,13 @@ class AccountInfoWidget extends StatelessWidget {
           ),
         ),
         SizedBox(width: 8.w),
-        CustomText(
-          data: userName,
-          fontsize: 18.sp,
-          color: AppColor.browneColor,
+        InkWell(
+          onTap: onPresseduserName,
+          child: CustomText(
+            data: userName,
+            fontsize: 18.sp,
+            color: AppColor.browneColor,
+          ),
         ),
         Spacer(),
         CustomButton(

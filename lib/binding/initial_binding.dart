@@ -4,6 +4,7 @@ import 'package:store/controller/auth_controller/forgot_password_controller.dart
 import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/properties_advertisement_controller.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/vechicles_advertisement_controller.dart';
+import 'package:store/controller/main_nav_controller/advertiser_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/my_account_controller.dart';
 import 'package:store/controller/main_nav_controller/favorite_controller.dart';
 import 'package:store/controller/main_nav_controller/home_controller/home_controller.dart';
@@ -187,5 +188,13 @@ class MyAccountBinding extends Bindings {
     Get.lazyPut<MyAccountController>(() => MyAccountController(), fenix: true);
     Get.lazyPut<AddPhotoController>(() => AddPhotoController(),
         tag: 'myaccount', fenix: true);
+  }
+}
+
+class AdvertiserBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<AdvertiserController>(() => AdvertiserController(),
+        fenix: true);
   }
 }

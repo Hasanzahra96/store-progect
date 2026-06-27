@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/home_controller/vechicles_controller/vechicles_details_controller.dart';
 import 'package:store/core/constant/color.dart';
+
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_text.dart';
 import 'package:store/view/widgets/main_widgets/advertisement_widgets/main_adrees_widget.dart';
@@ -50,6 +51,9 @@ class VechiclesDetailsScreen extends GetView<VechiclesDetailsController> {
                   SizedBox(height: 8.h),
                   AccountInfoWidget(
                     userName: controller.vechicleItemModel.user ?? '',
+                    onPresseduserName: () {
+                      controller.goToAdvertscreen(controller.vechicleItemModel);
+                    },
 
                     /// قسم معلومات الحساب
                     onPressedButton: () {},

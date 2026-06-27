@@ -110,8 +110,10 @@ class VechiclesFilterResultScreen
                   ),
                 ),
                 Expanded(
-                  child: ListView.builder(
+                  child: ListView.separated(
                       itemCount: vechiclesFilterResultList.length,
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 16.h),
                       itemBuilder: (context, index) {
                         final item = vechiclesFilterResultList[index];
                         return FilterResultItem(
