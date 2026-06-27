@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:store/core/functions/back_dialog.dart';
+import 'package:store/core/functions/show_custom_dialog.dart';
 import 'package:store/data/model/vechicle_model/vechicle_item_model.dart';
 
 class AdvertiserController extends GetxController {
@@ -31,16 +31,21 @@ class AdvertiserController extends GetxController {
   //////////////////////////
 
   void showDialoge() {
-    showCustomDialog('هل أنت متأكد ؟',
-        'عند التأكيد سوف يتم إلغاء المتابعة و لن تتمكن من رؤية كل المنشورات للمعلن',
-        () {
-      toggleFollow();
-      Get.back();
-    }, () {
-      Get.back();
-    });
+    showCustomDialog(
+        title: 'هل أنت متأكد ؟',
+        middleText:
+            'عند التأكيد سوف يتم إلغاء المتابعة و لن تتمكن من رؤية كل المنشورات للمعلن',
+        onTapYes: () {
+          toggleFollow();
+          Get.back();
+        },
+        onTapNo: () {
+          Get.back();
+        });
   }
+///////////////////////////////
 
+  void showButtomshet() {}
   @override
   void onInit() {
     super.onInit();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:store/core/functions/back_dialog.dart';
+import 'package:store/core/functions/show_custom_dialog.dart';
 import 'package:store/data/datasource/static/vechicles_lists/car_brand_list.dart';
 import 'package:store/data/datasource/static/vechicles_lists/all_state_car_lists.dart';
 import 'package:store/data/model/vechicle_model/car_feature.dart';
@@ -145,13 +145,14 @@ class VechiclesAdvertisementController extends GetxController {
   ///////////////////////////
   void showDialoge() {
     showCustomDialog(
-      'هل أنت متأكد من العودة إلى الوراء؟',
-      'عند التأكيد سوف يتم الاحتفاظ بنسخة احتياطية من البيانات المدخلة',
-      () {
+      title: 'هل أنت متأكد من العودة إلى الوراء؟',
+      middleText:
+          'عند التأكيد سوف يتم الاحتفاظ بنسخة احتياطية من البيانات المدخلة',
+      onTapYes: () {
         Get.back();
         Get.back();
       },
-      () {
+      onTapNo: () {
         Get.back();
       },
     );

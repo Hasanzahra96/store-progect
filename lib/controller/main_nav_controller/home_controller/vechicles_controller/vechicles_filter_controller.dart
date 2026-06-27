@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:store/core/functions/back_dialog.dart';
+import 'package:store/core/functions/show_custom_dialog.dart';
 import 'package:store/data/datasource/static/vechicles_lists/car_filter_lists.dart';
 import 'package:store/data/model/vechicle_model/car_feature.dart';
 
@@ -56,13 +56,13 @@ class VechiclesFilterController extends GetxController {
 ////////////////////
   void showDialoge() {
     showCustomDialog(
-      'هل أنت متأكد من الإجراء الحالي؟',
-      'عند التأكيد سوف يتم حذف جميع البيانات المدخلة ',
-      () {
+      title: 'هل أنت متأكد من الإجراء الحالي؟',
+      middleText: 'عند التأكيد سوف يتم حذف جميع البيانات المدخلة ',
+      onTapYes: () {
         Get.back();
         Get.back();
       },
-      () {
+      onTapNo: () {
         Get.back();
       },
     );

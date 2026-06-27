@@ -4,9 +4,12 @@ import 'package:get/get.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/view/widgets/custom_text.dart';
 
-Future<void> showCustomDialog(String title, String middleText,
-    void Function() onTapYes, void Function() onTapNo) {
-  return Get.defaultDialog(
+Future<T?> showCustomDialog<T>(
+    {required String title,
+    required String middleText,
+    required void Function() onTapYes,
+    required void Function() onTapNo}) {
+  return Get.defaultDialog<T?>(
     //   barrierDismissible: false, // منع الضغط خارج الدايالوج
     title: title,
     titleStyle: const TextStyle(
