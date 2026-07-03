@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:store/core/functions/auth_bottom_sheet.dart';
 import 'package:store/core/functions/show_custom_dialog.dart';
+import 'package:store/core/functions/sub_bottom_sheet.dart';
 import 'package:store/data/model/vechicle_model/vechicle_item_model.dart';
 
 class AdvertiserController extends GetxController {
@@ -45,7 +47,21 @@ class AdvertiserController extends GetxController {
   }
 ///////////////////////////////
 
-  void showButtomshet() {}
+  void showButtomshet() {
+    authBottomSheet(
+      onPressed1: () {},
+      onPressed2: () {},
+    );
+  }
+
+  ////////////////////////////
+  void showSubButtomshet() {
+    subBottomSheet(
+      onPressed1: () {},
+      onPressed2: () {},
+    );
+  }
+
   @override
   void onInit() {
     super.onInit();

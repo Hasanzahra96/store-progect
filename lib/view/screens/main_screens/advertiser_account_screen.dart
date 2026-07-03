@@ -65,6 +65,7 @@ class AdvertiserAccountScreen extends GetView<AdvertiserController> {
                 builder: (controller) => CustomButton(
                   data: controller.isfolowing ? 'متابعة' : 'إلغاء المتابعة',
                   onPressed: () {
+                    //      controller.showButtomshet();
                     if (controller.isfolowing == false) {
                       controller.showDialoge();
                       controller.toggleFollow();
@@ -123,8 +124,12 @@ class AdvertiserAccountScreen extends GetView<AdvertiserController> {
           ),
           child: ContactButtonsWidget(
             ////////// قسم أزرار التواصل
-            onPressedCall: () {},
-            onPressedWhatsApp: () {},
+            onPressedCall: () {
+              controller.showSubButtomshet();
+            },
+            onPressedWhatsApp: () {
+              controller.showSubButtomshet();
+            },
           ),
         ),
       ),

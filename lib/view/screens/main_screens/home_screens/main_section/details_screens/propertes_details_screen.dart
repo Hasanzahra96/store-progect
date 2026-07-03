@@ -87,8 +87,12 @@ class PropertesDetailsScreen extends GetView<PropertiesDetailsController> {
                   const PropertyDetSimilarAdsSection(),
                   SizedBox(height: 50.h),
                   ContactButtonsWidget(
-                    onPressedCall: () {},
-                    onPressedWhatsApp: () {}, ////////// قسم أزرار التواصل
+                    onPressedCall: () {
+                      controller.showSubButtomshet();
+                    },
+                    onPressedWhatsApp: () {
+                      controller.showSubButtomshet();
+                    }, ////////// قسم أزرار التواصل
                   )
                 ],
               )),

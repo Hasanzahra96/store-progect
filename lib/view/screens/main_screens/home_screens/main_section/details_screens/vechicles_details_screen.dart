@@ -89,8 +89,12 @@ class VechiclesDetailsScreen extends GetView<VechiclesDetailsController> {
                   SizedBox(height: 50.h),
                   ContactButtonsWidget(
                     ////////// قسم أزرار التواصل
-                    onPressedCall: () {},
-                    onPressedWhatsApp: () {},
+                    onPressedCall: () {
+                      controller.showSubButtomshet();
+                    },
+                    onPressedWhatsApp: () {
+                      controller.showSubButtomshet();
+                    },
                   )
                 ],
               )),
