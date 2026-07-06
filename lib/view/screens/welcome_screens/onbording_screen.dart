@@ -133,6 +133,9 @@ class OnBordingScreen extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(
+                height: 8.h,
+              ),
               CustomTextRich(
                 data: 'OnBordingScreen5'.tr,
                 color: AppColor.browneColor,
