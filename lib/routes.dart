@@ -14,6 +14,7 @@ import 'package:store/view/screens/main_screens/advertisement_screens/properties
 import 'package:store/view/screens/main_screens/advertisement_screens/vechicles_advertisement_screen.dart';
 import 'package:store/view/screens/main_screens/advertiser_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
 import 'package:store/view/screens/main_screens/favorite_screen.dart';
 import 'package:store/view/screens/main_screens/home_screens/main_section/details_screens/propertes_details_screen.dart';
 import 'package:store/view/screens/main_screens/home_screens/main_section/details_screens/vechicles_details_screen.dart';
@@ -37,17 +38,18 @@ List<GetPage<dynamic>>? routes = [
       name: AppRouts.mainNavigationScreen,
       page: () => MainNavigationScreen(),
       binding: InitialBinding()),
+
+  //====================== drawer root ==========================================
   GetPage(
     name: AppRouts.myAccountScreen,
     page: () => MyAccountScreen(),
     binding: MyAccountBinding(),
   ),
   GetPage(
-    name: AppRouts.advertiserAccountScreen,
-    page: () => AdvertiserAccountScreen(),
-    binding: AdvertiserBinding(),
+    name: AppRouts.shareAppScreen,
+    page: () => ShareAppScreen(),
+    //  binding: SharAppBinding(),
   ),
-
   //====================== welcome root ==========================================
   GetPage(
     name: AppRouts.onbordingScreen,
@@ -140,6 +142,14 @@ List<GetPage<dynamic>>? routes = [
     page: () => const PropertiesFilterResultScreen(),
     binding: PropertiesFilterResultBinding(),
   ),
+
+  ///
+  GetPage(
+    name: AppRouts.advertiserAccountScreen,
+    page: () => AdvertiserAccountScreen(),
+    binding: AdvertiserBinding(),
+  ),
+
   //=============================== advertisment root=========================
   GetPage(
     name: AppRouts.advertisementScreen,

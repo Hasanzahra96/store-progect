@@ -15,8 +15,11 @@ class AppRouts {
 
   /////////////=====================main root============///////////////
   static const String mainNavigationScreen = '/mainNavigationScreen';
-  static const String myAccountScreen = '/myAccountScreen';
+
   static const String advertiserAccountScreen = '/advertiserAccountScreen';
+  /////////////=====================drawer root============///////////////
+  static const String myAccountScreen = '/myAccountScreen';
+  static const String shareAppScreen = '/shareAppScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
   static const String vechiclesScreen = '/vechiclesScreen';

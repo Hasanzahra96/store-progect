@@ -22,6 +22,7 @@ class AppImageAssets {
   static const String rectangle224 = '$rootImages/rectangle224.png';
   static const String housee = '$rootImages/housee.png';
   static const String land = '$rootImages/land.png';
+  static const String share = '$rootImages/share.png';
 
   //icons
   static const String costumerservice = '$rootIcons/costumerService.svg';
@@ -30,6 +31,9 @@ class AppImageAssets {
   static const String instegram = '$rootIcons/instegram.svg';
   static const String twitter = '$rootIcons/twitter.svg';
   static const String whatsapp = '$rootIcons/whatsapp.svg';
+  static const String facebooks = '$rootIcons/facebooks.svg';
+  static const String telegrams = '$rootIcons/telegrams.svg';
+  static const String whatsapps = '$rootIcons/whatsapps.svg';
   //car
   static const String chevrolet = '$rootIcons/chevrolet.svg';
   static const String ford = '$rootIcons/ford.svg';

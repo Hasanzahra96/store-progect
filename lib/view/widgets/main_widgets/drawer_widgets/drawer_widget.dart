@@ -45,7 +45,7 @@ class DrawerWidget extends StatelessWidget {
             icon: Icons.share_outlined,
             title: 'شارك التطبيق',
             onTap: () {
-              //    Get.toNamed(AppRouts.shareAppScreen);
+              Get.toNamed(AppRouts.shareAppScreen);
             },
           ),
           CustomListTile(
