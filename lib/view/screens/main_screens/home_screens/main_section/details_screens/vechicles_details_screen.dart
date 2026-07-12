@@ -24,8 +24,6 @@ class VechiclesDetailsScreen extends GetView<VechiclesDetailsController> {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'تفاصيل المركبة',
-        isBack: true,
-        isShape: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

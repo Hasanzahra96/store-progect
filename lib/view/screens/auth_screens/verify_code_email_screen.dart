@@ -19,8 +19,8 @@ class VerifyCodeEmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+        leading: const SizedBox.shrink(),
         title: 'VerifyCodeEmailScreen1'.tr,
-        isBack: false,
       ),
       body: ScrollVieww(
         child: Padding(

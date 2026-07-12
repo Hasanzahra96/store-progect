@@ -34,8 +34,6 @@ class PropertiesFilterResultScreen
         child: Scaffold(
           appBar: const CustomAppBar(
             title: 'نتائج البحث',
-            isBack: true,
-            isShape: true,
           ),
           body: GetBuilder<PropertiesFilterResultController>(
             builder: (controller) => Column(

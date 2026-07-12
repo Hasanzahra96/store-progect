@@ -18,8 +18,6 @@ class MyAccountScreen extends GetView<MyAccountController> {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'حسابي',
-        isShape: true,
-        isBack: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(

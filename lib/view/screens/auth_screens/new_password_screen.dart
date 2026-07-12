@@ -18,8 +18,8 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBar(
+          leading: const SizedBox.shrink(),
           title: 'NewPasswordScreen1'.tr,
-          isBack: false,
         ),
         body: ScrollVieww(
           child: Form(

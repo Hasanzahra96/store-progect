@@ -33,8 +33,6 @@ class VechiclesFilterResultScreen
         child: Scaffold(
           appBar: const CustomAppBar(
             title: 'نتائج البحث',
-            isBack: true,
-            isShape: true,
           ),
           body: GetBuilder<VechiclesFilterResultController>(
             builder: (controller) => Column(

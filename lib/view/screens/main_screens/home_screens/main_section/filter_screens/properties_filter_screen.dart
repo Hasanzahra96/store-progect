@@ -25,8 +25,6 @@ class PropertiesFilterScreen extends GetView<PropertiesFilterController> {
     return Scaffold(
         appBar: CustomAppBar(
           title: 'الفلاتر',
-          isBack: true,
-          isShape: true,
           actions: [
             IconButton(
               onPressed: () {},

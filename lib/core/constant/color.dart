@@ -14,4 +14,5 @@ class AppColor {
   static const Color checkBoxColor = Color(0xffD9D9D9);
   static const Color skyblueColor = Color(0xff0D80F2);
   static const Color tranColor = Colors.transparent;
+  static const Color yalowColor = Color(0xfff2db31);
 }
