@@ -27,8 +27,6 @@ class PropertiesAdvertisementScreen
     return Scaffold(
         appBar: CustomAppBar(
           title: 'إضافة إعلان جديد',
-          isShape: true,
-          isBack: true,
           backFunction: () => controller.showDialoge(),
         ),
         body: SafeArea(

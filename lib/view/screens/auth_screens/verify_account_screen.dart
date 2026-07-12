@@ -20,8 +20,8 @@ class VerifyAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
+        leading: const SizedBox.shrink(),
         title: 'VerifyAccountScreen1'.tr,
-        isBack: false,
       ),
       body: ScrollVieww(
         child: Padding(

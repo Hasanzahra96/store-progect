@@ -20,6 +20,8 @@ class AppRouts {
   /////////////=====================drawer root============///////////////
   static const String myAccountScreen = '/myAccountScreen';
   static const String shareAppScreen = '/shareAppScreen';
+  static const String subscribeScreen = '/subscribeScreen';
+  static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
   static const String vechiclesScreen = '/vechiclesScreen';

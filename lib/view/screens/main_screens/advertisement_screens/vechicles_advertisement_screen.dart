@@ -25,8 +25,6 @@ class VechiclesAdvertisementScreen
     return Scaffold(
         appBar: CustomAppBar(
             title: 'إضافة إعلان جديد',
-            isShape: true,
-            isBack: true,
             backFunction: () => controller.showDialoge()),
         body: SafeArea(
           child: SingleChildScrollView(

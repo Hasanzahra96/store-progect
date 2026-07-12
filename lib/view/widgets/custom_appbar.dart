@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final ShapeBorder? shape;
   final bool? isBack;
-  final bool? isShape;
+
   final void Function()? backFunction;
   const CustomAppBar({
     super.key,
@@ -29,7 +29,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leading,
     this.actions,
     this.isBack = true,
-    this.isShape = true,
     this.shape,
     this.iconLeadingColor,
     this.iconLeadingSize,

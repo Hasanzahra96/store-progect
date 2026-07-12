@@ -24,8 +24,6 @@ class PropertesDetailsScreen extends GetView<PropertiesDetailsController> {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'تفاصيل العقار',
-        isBack: true,
-        isShape: true,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -65,10 +63,10 @@ class PropertesDetailsScreen extends GetView<PropertiesDetailsController> {
                   controller.propertyId == '4'
                       ? const LandDetFeaturesSection()
                       : /////////// قسم مواصفات الأرض (يظهر فقط إذا كان العقار أرضي)
-                      Column(
+                      const Column(
                           children: [
-                            const PropertyDetFeatureSection(),
-                            const PropertyDetDetailsSection(), /////////// قسم تفاصيل العقار
+                            PropertyDetFeatureSection(),
+                            PropertyDetDetailsSection(), /////////// قسم تفاصيل العقار
                           ],
                         ), /////////  قسم مواصفات البناء
 

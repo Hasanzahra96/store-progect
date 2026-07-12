@@ -17,8 +17,6 @@ class AdvertisementScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'انشاء إعلان جديد',
-        isShape: true,
-        isBack: true,
       ),
       body: SingleChildScrollView(
         child: SafeArea(

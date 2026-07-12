@@ -51,7 +51,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.subscriptions_outlined,
             title: 'الاشتراك',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.subscribeScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.point_of_sale_outlined,

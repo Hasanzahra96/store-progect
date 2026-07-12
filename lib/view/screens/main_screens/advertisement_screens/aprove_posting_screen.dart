@@ -18,7 +18,6 @@ class AprovePostingScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'تأكيد النشر',
-        isShape: true,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.r),

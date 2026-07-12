@@ -15,8 +15,6 @@ class ShareAppScreen extends StatelessWidget {
     return Scaffold(
         appBar: const CustomAppBar(
           title: 'شارك التطبيق',
-          isBack: true,
-          isShape: true,
         ),
         body: SingleChildScrollView(
           child: Padding(
