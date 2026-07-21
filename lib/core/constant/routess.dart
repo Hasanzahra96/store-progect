@@ -22,6 +22,7 @@ class AppRouts {
   static const String shareAppScreen = '/shareAppScreen';
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
+  static const String digitalPaymentScreen = '/digitalPaymentScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
   static const String vechiclesScreen = '/vechiclesScreen';

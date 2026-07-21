@@ -38,6 +38,12 @@ validInput(
       return "valid5".tr;
     }
   }
+  ///////// التحقق من كود الخصم
 
+  if (tayp == 'discount') {
+    if (val.length > max) {
+      return 'الكود غير صالح أو منتهي الصلاحية';
+    }
+  }
   return null;
 }

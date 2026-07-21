@@ -13,7 +13,9 @@ class CustomButton extends StatelessWidget {
   final Color? colorF;
   final double? fontsize;
   final Function()? onPressed;
+  final EdgeInsetsGeometry? padding;
   final bool isEnabel;
+  final double? borderRadius;
   const CustomButton({
     super.key,
     this.height,
@@ -26,6 +28,8 @@ class CustomButton extends StatelessWidget {
     this.elevation,
     this.fontWeight,
     this.isEnabel = true,
+    this.padding,
+    this.borderRadius,
   });
 
   @override
@@ -33,6 +37,7 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: MaterialButton(
+        padding: padding,
         disabledColor: AppColor.button2Color,
         disabledTextColor: AppColor.greyColor,
         height: height ?? 58.h,
@@ -40,7 +45,7 @@ class CustomButton extends StatelessWidget {
         color: colorB,
         elevation: elevation,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
         ),
         onPressed: isEnabel ? onPressed : null,
         child: CustomText(

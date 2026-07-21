@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:store/core/constant/color.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -20,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final Color? bordercolor;
   final void Function()? onPress;
+  final Widget? helper;
 
   const CustomTextFormField({
     super.key,
@@ -39,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines = 1,
     this.suffixIcon,
     this.onPress,
+    this.helper,
   });
 
   @override
@@ -47,6 +48,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: TextFormField(
+        cursorColor: AppColor.fontColor,
         onTap: onPress,
         maxLines: maxLines,
         textAlignVertical: TextAlignVertical.center,
@@ -58,6 +60,7 @@ class CustomTextFormField extends StatelessWidget {
         obscureText: obscureText,
         keyboardType: keyboardType,
         decoration: InputDecoration(
+            helper: helper,
             suffixText: suffixText,
             suffixStyle: TextStyle(
               fontSize: 14.sp,

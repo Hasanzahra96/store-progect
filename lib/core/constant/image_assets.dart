@@ -2,7 +2,7 @@ class AppImageAssets {
   //roots
   static const String rootImages = 'assets/images';
   static const String rootIcons = 'assets/icons';
-  //images
+  //============images==========//
   static const String logo = '$rootImages/logo.png';
   static const String car1 = '$rootImages/car1.png';
   static const String home1 = '$rootImages/home1.png';
@@ -23,8 +23,9 @@ class AppImageAssets {
   static const String housee = '$rootImages/housee.png';
   static const String land = '$rootImages/land.png';
   static const String share = '$rootImages/share.png';
-
-  //icons
+  static const String syriatel = '$rootImages/syriatel.png';
+  static const String sham = '$rootImages/sham.png';
+  //==========icons==========//
   static const String costumerservice = '$rootIcons/costumerService.svg';
   static const String car = '$rootIcons/car.svg';
   static const String facebook = '$rootIcons/facebook.svg';
@@ -34,6 +35,7 @@ class AppImageAssets {
   static const String facebooks = '$rootIcons/facebooks.svg';
   static const String telegrams = '$rootIcons/telegrams.svg';
   static const String whatsapps = '$rootIcons/whatsapps.svg';
+
   //car
   static const String chevrolet = '$rootIcons/chevrolet.svg';
   static const String ford = '$rootIcons/ford.svg';
