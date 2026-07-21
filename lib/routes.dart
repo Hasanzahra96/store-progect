@@ -15,6 +15,7 @@ import 'package:store/view/screens/main_screens/advertisement_screens/vechicles_
 import 'package:store/view/screens/main_screens/advertiser_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/digital_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_detailes_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_screen.dart';
 import 'package:store/view/screens/main_screens/favorite_screen.dart';
@@ -50,17 +51,21 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRouts.shareAppScreen,
     page: () => ShareAppScreen(),
-    //  binding: SharAppBinding(),
+  ),
+  GetPage(
+    name: AppRouts.digitalPaymentScreen,
+    page: () => DigitalPaymentScreen(),
+    binding: DigitalPaymentBinding(),
   ),
   GetPage(
     name: AppRouts.subscribeScreen,
     page: () => SubscribeScreen(),
-    //  binding: SharAppBinding(),
+    binding: SubscribeBinding(),
   ),
   GetPage(
     name: AppRouts.subscribeDetailesScreen,
     page: () => SubscribeDetailesScreen(),
-    //  binding: SharAppBinding(),
+    binding: SubscribeDetailesBinding(),
   ),
   //====================== welcome root ==========================================
   GetPage(
@@ -187,6 +192,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRouts.favoriteScreen,
     page: () => FavoriteScreen(),
+    binding: FavoriteBinding(),
   ),
   GetPage(
     name: AppRouts.myAdsScreen,

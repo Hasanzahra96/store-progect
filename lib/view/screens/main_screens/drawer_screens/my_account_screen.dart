@@ -5,10 +5,10 @@ import 'package:store/controller/main_nav_controller/drawer_controller/my_accoun
 import 'package:store/core/constant/color.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_button.dart';
-import 'package:store/view/widgets/main_widgets/drawer_widgets/account_type_widget.dart';
-import 'package:store/view/widgets/main_widgets/drawer_widgets/add_photo_myaccount.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widgets/my_account_widgets/account_type_widget.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widgets/my_account_widgets/add_photo_myaccount.dart';
 import 'package:store/view/widgets/main_widgets/drawer_widgets/list_tile_my_account_widget.dart';
-import 'package:store/view/widgets/main_widgets/drawer_widgets/password_edit_widget.dart';
+import 'package:store/view/widgets/main_widgets/drawer_widgets/my_account_widgets/password_edit_widget.dart';
 
 class MyAccountScreen extends GetView<MyAccountController> {
   const MyAccountScreen({super.key});

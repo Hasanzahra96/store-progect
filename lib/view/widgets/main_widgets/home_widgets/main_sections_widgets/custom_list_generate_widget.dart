@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomListGenerateWidget extends StatelessWidget {
   final List list;
+  final MainAxisAlignment? mainAxisAlignment;
   final Widget Function(BuildContext context, int index) itemBuilder;
   const CustomListGenerateWidget(
-      {super.key, required this.list, required this.itemBuilder});
+      {super.key,
+      required this.list,
+      required this.itemBuilder,
+      this.mainAxisAlignment});
 
   @override
   Widget build(BuildContext context) {
