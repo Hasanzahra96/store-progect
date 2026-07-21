@@ -51,7 +51,7 @@ class EmailCheckScreen extends GetView<EmailCheckController> {
                     keyboardType: TextInputType.name,
                     hintText: " Email@gmail.com ",
                     validator: (value) {
-                      return controller.emailValidator();
+                      return controller.emailValidator(value);
                     },
                   ),
                   SizedBox(

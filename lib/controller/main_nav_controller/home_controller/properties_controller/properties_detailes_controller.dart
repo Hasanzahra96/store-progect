@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:get/get.dart';
+import 'package:store/core/constant/routess.dart';
+import 'package:store/core/functions/auth_bottom_sheet.dart';
+import 'package:store/core/functions/sub_bottom_sheet.dart';
 import 'package:store/data/datasource/static/prperties_lists/property_item_list.dart';
 import 'package:store/data/model/properties_model/property_item_model.dart';
 
@@ -92,6 +95,31 @@ class PropertiesDetailsController extends GetxController {
         .where((element) => element.propertyId == propertyId)
         .toList();
     update();
+  }
+
+  goToAdvertscreen(PropertyItemModel propertyItemModel) {
+    Get.toNamed(AppRouts.advertiserAccountScreen, arguments: {
+      // 'propertyItemModel': propertyItemModel,
+      'user': propertyItemModel.user,
+    });
+    update();
+  }
+
+///////////////////////////////
+
+  void showButtomshet() {
+    authBottomSheet(
+      onPressed1: () {},
+      onPressed2: () {},
+    );
+  }
+
+  ////////////////////////////
+  void showSubButtomshet() {
+    subBottomSheet(
+      onPressed1: () {},
+      onPressed2: () {},
+    );
   }
 
   @override

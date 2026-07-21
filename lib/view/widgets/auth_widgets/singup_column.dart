@@ -31,10 +31,9 @@ class SingUpColumn extends StatelessWidget {
         ),
         CustomTextFormField(
           controller: controller.firstNameController,
-          keyboardType: TextInputType.name,
           hintText: "SingupScreen2*".tr,
           validator: (value) {
-            return controller.firtNameValidatorSingUP();
+            return controller.firtNameValidatorSingUP(value);
           },
         ),
         SizedBox(
@@ -51,7 +50,7 @@ class SingUpColumn extends StatelessWidget {
           keyboardType: TextInputType.name,
           hintText: "SingupScreen3*".tr,
           validator: (value) {
-            return controller.lastNameValidatorSingUP();
+            return controller.lastNameValidatorSingUP(value);
           },
         ),
         SizedBox(
@@ -68,7 +67,7 @@ class SingUpColumn extends StatelessWidget {
           keyboardType: TextInputType.name,
           hintText: "Email@gmail.com",
           validator: (value) {
-            return controller.emailValidatorSingUP();
+            return controller.emailValidatorSingUP(value);
           },
         ),
         SizedBox(
@@ -103,7 +102,7 @@ class SingUpColumn extends StatelessWidget {
             controller: controller.passwordController,
             obscureText: controller.isobscare,
             validator: (value) {
-              return controller.passValidatorSingUP();
+              return controller.passValidatorSingUP(value);
             },
             suffixIcon: IconButton(
               icon: Icon(
@@ -130,7 +129,7 @@ class SingUpColumn extends StatelessWidget {
             controller: controller.confirmPasswordController,
             obscureText: controller.isobsCareconfirm,
             validator: (value) {
-              return controller.passValidatorConfirmSingUP();
+              return controller.passValidatorConfirmSingUP(value);
             },
             suffixIcon: IconButton(
               icon: Icon(

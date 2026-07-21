@@ -8,22 +8,28 @@ import 'package:store/view/screens/auth_screens/new_password_screen.dart';
 import 'package:store/view/screens/auth_screens/verify_account_screen.dart';
 import 'package:store/view/screens/auth_screens/verify_code_email_screen.dart';
 import 'package:store/view/screens/auth_screens/verify_code_phone_screen.dart';
-import 'package:store/view/screens/main_nav_screens/advertisement_screens/advertisement_screens.dart';
-import 'package:store/view/screens/main_nav_screens/advertisement_screens/aprove_posting_screen.dart';
-import 'package:store/view/screens/main_nav_screens/advertisement_screens/properties_advertisemen_screen.dart';
-import 'package:store/view/screens/main_nav_screens/advertisement_screens/vechicles_advertisement_screen.dart';
-import 'package:store/view/screens/main_nav_screens/favorite_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/details_screens/propertes_details_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/details_screens/vechicles_details_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/home_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/filter_screens/properties_filter_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/filter_screens/result_filter_screen/properties_filter_result_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/filter_screens/result_filter_screen/vechicles_filter_result_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/filter_screens/vechicles_filter_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/properties_screen.dart';
-import 'package:store/view/screens/main_nav_screens/home_screens/main_section/vechicles_screen.dart';
-import 'package:store/view/screens/main_nav_screens/my_ads_screen.dart';
-import 'package:store/view/screens/main_nav_screens/my_follows_screen.dart';
+import 'package:store/view/screens/main_screens/advertisement_screens/advertisement_screens.dart';
+import 'package:store/view/screens/main_screens/advertisement_screens/aprove_posting_screen.dart';
+import 'package:store/view/screens/main_screens/advertisement_screens/properties_advertisemen_screen.dart';
+import 'package:store/view/screens/main_screens/advertisement_screens/vechicles_advertisement_screen.dart';
+import 'package:store/view/screens/main_screens/advertiser_account_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/digital_payment_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_detailes_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_screen.dart';
+import 'package:store/view/screens/main_screens/favorite_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/details_screens/propertes_details_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/details_screens/vechicles_details_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/home_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/filter_screens/properties_filter_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/filter_screens/result_filter_screen/properties_filter_result_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/filter_screens/result_filter_screen/vechicles_filter_result_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/filter_screens/vechicles_filter_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/properties_screen.dart';
+import 'package:store/view/screens/main_screens/home_screens/main_section/vechicles_screen.dart';
+import 'package:store/view/screens/main_screens/my_ads_screen.dart';
+import 'package:store/view/screens/main_screens/my_follows_screen.dart';
 import 'package:store/view/screens/main_navigation_screen.dart';
 import 'package:store/view/screens/welcome_screens/choose_language_screen.dart';
 import 'package:store/view/screens/welcome_screens/onbording_screen.dart';
@@ -36,6 +42,31 @@ List<GetPage<dynamic>>? routes = [
       page: () => MainNavigationScreen(),
       binding: InitialBinding()),
 
+  //====================== drawer root ==========================================
+  GetPage(
+    name: AppRouts.myAccountScreen,
+    page: () => MyAccountScreen(),
+    binding: MyAccountBinding(),
+  ),
+  GetPage(
+    name: AppRouts.shareAppScreen,
+    page: () => ShareAppScreen(),
+  ),
+  GetPage(
+    name: AppRouts.digitalPaymentScreen,
+    page: () => DigitalPaymentScreen(),
+    binding: DigitalPaymentBinding(),
+  ),
+  GetPage(
+    name: AppRouts.subscribeScreen,
+    page: () => SubscribeScreen(),
+    binding: SubscribeBinding(),
+  ),
+  GetPage(
+    name: AppRouts.subscribeDetailesScreen,
+    page: () => SubscribeDetailesScreen(),
+    binding: SubscribeDetailesBinding(),
+  ),
   //====================== welcome root ==========================================
   GetPage(
     name: AppRouts.onbordingScreen,
@@ -128,6 +159,14 @@ List<GetPage<dynamic>>? routes = [
     page: () => const PropertiesFilterResultScreen(),
     binding: PropertiesFilterResultBinding(),
   ),
+
+  ///
+  GetPage(
+    name: AppRouts.advertiserAccountScreen,
+    page: () => AdvertiserAccountScreen(),
+    binding: AdvertiserBinding(),
+  ),
+
   //=============================== advertisment root=========================
   GetPage(
     name: AppRouts.advertisementScreen,
@@ -153,6 +192,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRouts.favoriteScreen,
     page: () => FavoriteScreen(),
+    binding: FavoriteBinding(),
   ),
   GetPage(
     name: AppRouts.myAdsScreen,

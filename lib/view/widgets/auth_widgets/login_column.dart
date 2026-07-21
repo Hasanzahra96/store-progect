@@ -87,7 +87,7 @@ class LoginColumn extends StatelessWidget {
                   controller: controller.passwordController,
                   obscureText: controller.isobscare,
                   validator: (value) {
-                    return controller.passValidator();
+                    return controller.passValidator(value!);
                   },
                   suffixIcon: IconButton(
                     icon: Icon(

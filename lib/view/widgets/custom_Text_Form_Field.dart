@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:store/core/constant/color.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -20,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final Color? bordercolor;
   final void Function()? onPress;
+  final Widget? helper;
 
   const CustomTextFormField({
     super.key,
@@ -39,39 +39,34 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines = 1,
     this.suffixIcon,
     this.onPress,
+    this.helper,
   });
 
   @override
   Widget build(BuildContext context) {
-    // final isRtl = Directionality.of(context) == TextDirection.rtl;
+//    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: TextFormField(
+        cursorColor: AppColor.fontColor,
         onTap: onPress,
         maxLines: maxLines,
         textAlignVertical: TextAlignVertical.center,
         //   textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-        //   textAlign: isRtl ? TextAlign.right : TextAlign.left,
+        //  textAlign: isRtl ? TextAlign.right : TextAlign.left,
         controller: controller,
         validator: validator,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         obscureText: obscureText,
         keyboardType: keyboardType,
         decoration: InputDecoration(
+            helper: helper,
             suffixText: suffixText,
             suffixStyle: TextStyle(
               fontSize: 14.sp,
             ),
             fillColor: isborderSide ? fillColor : null,
             filled: isborderSide ? true : false,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-              borderSide: isborderSide
-                  ? BorderSide.none
-                  : BorderSide(
-                      color: bordercolor ?? AppColor.greyColor.withOpacity(0.3),
-                    ),
-            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
               borderSide: BorderSide(

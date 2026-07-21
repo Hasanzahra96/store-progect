@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:store/core/functions/back_dialog.dart';
+import 'package:store/core/functions/show_custom_dialog.dart';
 import 'package:store/data/datasource/static/prperties_lists/all_state_property_lists.dart';
 import 'package:store/data/model/properties_model/property_feature.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
@@ -221,14 +221,15 @@ class PropertiesAdvertisementController extends GetxController {
 
   ///////////////////////////
   void showDialoge() {
-    show(
-      'هل أنت متأكد من العودة إلى الوراء؟',
-      'عند التأكيد سوف يتم الاحتفاظ بنسخة احتياطية من البيانات المدخلة',
-      () {
+    showCustomDialog(
+      title: 'هل أنت متأكد من العودة إلى الوراء؟',
+      middleText:
+          'عند التأكيد سوف يتم الاحتفاظ بنسخة احتياطية من البيانات المدخلة',
+      onTapYes: () {
         Get.back();
         Get.back();
       },
-      () {
+      onTapNo: () {
         Get.back();
       },
     );

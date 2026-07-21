@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/phone_number.dart';
+import 'package:store/core/functions/valid_input.dart';
 
 class LoginController extends GetxController {
   bool isobscare = true;
@@ -40,14 +41,15 @@ class LoginController extends GetxController {
   }
 
   ////////////////////////////////////////// اختبار حقل كلمه السر
-  String? passValidator() {
-    if (passwordController.text.isEmpty) {
-      return "LoginController3".tr;
-    }
-    if (passwordController.text.length < 6) {
-      return "LoginController4".tr;
-    }
-    return null;
+  String? passValidator(String val) {
+    return validInput(val, 6, 30, 'password');
+    //   if (passwordController.text.isEmpty) {
+    //     return "LoginController3".tr;
+    //   }
+    //   if (passwordController.text.length < 6) {
+    //     return "LoginController4".tr;
+    //   }
+    //   return null;
   }
 
   ////////////////////////////////////////   حفظ رقم الموبايل

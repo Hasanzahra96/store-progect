@@ -4,6 +4,11 @@ import 'package:store/controller/auth_controller/forgot_password_controller.dart
 import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/properties_advertisement_controller.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/vechicles_advertisement_controller.dart';
+import 'package:store/controller/main_nav_controller/advertiser_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/my_account_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
 import 'package:store/controller/main_nav_controller/favorite_controller.dart';
 import 'package:store/controller/main_nav_controller/home_controller/home_controller.dart';
 import 'package:store/controller/main_nav_controller/home_controller/properties_controller/properties_controller.dart';
@@ -33,11 +38,27 @@ class InitialBinding extends Bindings {
     Get.lazyPut<MainNavigationcontroller>(() => MainNavigationcontroller(),
         fenix: true);
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
-    Get.lazyPut<FavoriteController>(() => FavoriteController(), fenix: true);
+
     Get.lazyPut<MyFollowsController>(() => MyFollowsController(), fenix: true);
     Get.lazyPut<MyAdsController>(() => MyAdsController(), fenix: true);
     Get.lazyPut<VechiclesController>(() => VechiclesController(), fenix: true);
     Get.lazyPut<PropertiesController>(() => PropertiesController(),
+        fenix: true);
+  }
+}
+
+class FavoriteBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<FavoriteController>(() => FavoriteController(), fenix: true);
+  }
+}
+
+////////////////=========AdvertiserBinding========///////////
+class AdvertiserBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<AdvertiserController>(() => AdvertiserController(),
         fenix: true);
   }
 }
@@ -178,4 +199,37 @@ class PropertiesAdvertisementBinding extends Bindings {
         tag: 'properties', fenix: true);
   }
 }
-/////////////////////=================/////////////////////////////
+
+/////////////////////========drawerBinding========/////////////////////////////
+class MyAccountBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<MyAccountController>(() => MyAccountController(), fenix: true);
+    Get.lazyPut<AddPhotoController>(() => AddPhotoController(),
+        tag: 'myaccount', fenix: true);
+  }
+}
+
+class SubscribeBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<SubscribeController>(() => SubscribeController(), fenix: true);
+  }
+}
+
+class SubscribeDetailesBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<SubscribeDetailesController>(
+        () => SubscribeDetailesController(),
+        fenix: true);
+  }
+}
+
+class DigitalPaymentBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<DigitalPaymentController>(() => DigitalPaymentController(),
+        fenix: true);
+  }
+}

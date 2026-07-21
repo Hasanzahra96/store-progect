@@ -114,7 +114,7 @@ class VechiclesController extends GetxController {
   String? selectedStateId;
   String? selectedPayTypeId;
 
-  goToVechicleDetails(VechicleItemModel vechicleItemModel) {
+  goToVechicleDetails(vechicleItemModel) {
     Get.toNamed(AppRouts.vechiclesDetailsScreen, arguments: {
       // 'vechicleItemModel': vechicleItemModel,
       'id': vechicleItemModel.id,

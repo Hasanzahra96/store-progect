@@ -19,7 +19,7 @@ class VerifyCodePhoneScreen extends GetView<VerifyCodePhoneController> {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'VerifyCodePhoneScreen1'.tr,
-        isBack: false,
+        leading: const SizedBox.shrink(),
       ),
       body: ScrollVieww(
         child: Padding(

@@ -9,7 +9,7 @@ class CustomTextRich extends StatelessWidget {
   final String? fdata;
   final Color? color;
   final Color? underlincolor;
-  final double? width;
+
   final double? fontsize;
   final FontWeight? fontweight;
   final String? fontfamily;
@@ -26,7 +26,6 @@ class CustomTextRich extends StatelessWidget {
     this.underlincolor,
     this.fdata,
     this.fontfamily = 'Tajawal',
-    this.width,
     this.decorationThickness,
   });
 

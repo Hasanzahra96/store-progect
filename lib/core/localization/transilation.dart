@@ -4,6 +4,7 @@ import 'package:store/core/localization/local_files/home_transilation.dart';
 import 'package:store/core/localization/local_files/login_transilation.dart';
 import 'package:store/core/localization/local_files/new_pas_transilation.dart';
 import 'package:store/core/localization/local_files/singup_transilation.dart';
+import 'package:store/core/localization/local_files/valid_transilation.dart';
 import 'package:store/core/localization/local_files/verify_code_transilation.dart';
 import 'package:store/core/localization/local_files/welcoms_transilation.dart';
 
@@ -11,6 +12,7 @@ class Transilation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': {
+          ...validEn,
           ...welcomeEn,
           ...onBordingEn,
           ...loginEn,
@@ -24,6 +26,7 @@ class Transilation extends Translations {
           ...homeEn,
         },
         'ar': {
+          ...validAr,
           ...welcomeAr,
           ...onBordingAr,
           ...loginAr,

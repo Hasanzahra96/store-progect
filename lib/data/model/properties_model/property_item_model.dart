@@ -20,6 +20,7 @@ class PropertyItemModel {
   final String? location;
   final int? price;
   final String? user;
+  final String? userId;
 
   PropertyItemModel(
       {required this.id,
@@ -39,6 +40,7 @@ class PropertyItemModel {
       this.price,
       this.images,
       this.user,
+      this.userId,
       this.type,
       this.area});
 
@@ -62,6 +64,7 @@ class PropertyItemModel {
       price: json['price'],
       images: (json['images'] as List?)?.map((e) => e.toString()).toList(),
       user: json['user'],
+      userId: json['userId'],
       type: _parseType(int.tryParse(json['propertyId']?.toString() ?? '') ?? 0),
       lowStateId: '',
       lowState: '',
