@@ -23,6 +23,7 @@ class AppRouts {
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
   static const String digitalPaymentScreen = '/digitalPaymentScreen';
+  static const String continuePaymentScreen = '/continuePaymentScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
   static const String vechiclesScreen = '/vechiclesScreen';
