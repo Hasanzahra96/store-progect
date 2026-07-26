@@ -41,7 +41,7 @@ class LoginController extends GetxController {
   }
 
   ////////////////////////////////////////// اختبار حقل كلمه السر
-  String? passValidator(String val) {
+  String? passValidator(val) {
     return validInput(val, 6, 30, 'password');
     //   if (passwordController.text.isEmpty) {
     //     return "LoginController3".tr;

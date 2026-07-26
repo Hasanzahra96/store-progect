@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
 import 'package:store/core/constant/color.dart';
+import 'package:store/core/constant/routess.dart';
 import 'package:store/core/utile/media_query.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_button.dart';
@@ -120,7 +121,9 @@ class SubscribeDetailesScreen extends GetView<SubscribeDetailesController> {
                   ),
                   CustomButton(
                     data: 'بطاقة تفعيل اشتراك(من نقاط البيع)',
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRouts.subscripActivationCardScreen);
+                    },
                   ),
                 ],
               ),

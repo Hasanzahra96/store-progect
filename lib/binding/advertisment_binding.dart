@@ -8,8 +8,8 @@ class VechiclesAdvertisementBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<VechiclesAdvertisementController>(
-        () => VechiclesAdvertisementController(),
-        fenix: true);
+      () => VechiclesAdvertisementController(),
+    );
     Get.lazyPut<AddPhotoController>(
       () => AddPhotoController(),
       tag: 'vechicles',
@@ -22,8 +22,8 @@ class PropertiesAdvertisementBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<PropertiesAdvertisementController>(
-        () => PropertiesAdvertisementController(),
-        fenix: true);
+      () => PropertiesAdvertisementController(),
+    );
     Get.lazyPut<AddPhotoController>(
       () => AddPhotoController(),
       tag: 'properties',

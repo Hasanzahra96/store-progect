@@ -18,13 +18,13 @@ List<GetPage<dynamic>> homeRoutes = [
     page: () => const Homescreen(),
   ),
   GetPage(
-    name: AppRouts.vechiclesScreen,
-    page: () => const VechiclesScreen(),
-  ),
+      name: AppRouts.vechiclesScreen,
+      page: () => const VechiclesScreen(),
+      binding: VechiclesBinding()),
   GetPage(
-    name: AppRouts.propertiesScreen,
-    page: () => const PropertiesScreen(),
-  ),
+      name: AppRouts.propertiesScreen,
+      page: () => const PropertiesScreen(),
+      binding: PropertiesBinding()),
 
   /////////////=====================detailes root================================
   GetPage(

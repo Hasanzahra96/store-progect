@@ -62,9 +62,8 @@ class DigitalPaymentController extends GetxController {
     } else {
       showPaymentError = false;
 
-      Get.toNamed(AppRouts.continuePaymentScreen, arguments: {
-        'id': paymentId,
-      });
+      Get.toNamed(AppRouts.continuePaymentScreen,
+          arguments: {'id': paymentId, 'subscribeId': subscribeId});
       update();
 
       // تابع الدفع

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/continue_payment_controller.dart';
 import 'package:store/core/constant/color.dart';
-import 'package:store/view/widgets/auth_widgets/custom_otp_text_field.dart';
 import 'package:store/view/widgets/auth_widgets/custom_phone_field.dart';
 import 'package:store/view/widgets/custom_Text_Form_Field.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
@@ -73,7 +72,14 @@ class ContinuePaymentScreen extends GetView<ContinuePaymentController> {
                         color: AppColor.greyColor,
                         fontweight: FontWeight.bold,
                       ),
-                      CustomPhoneField(),
+                      CustomPhoneField(
+                        controller: controller.phoneTextController,
+                        initialCountryCode: controller.initialCountryCode,
+                        onChanged: (value) => controller.onChanged(value),
+                        onCountryChanged: (value) =>
+                            controller.onCountryChanged(value),
+                        validator: (value) => controller.validator(),
+                      ),
                       SizedBox(
                         height: 16.h,
                       ),
@@ -84,7 +90,27 @@ class ContinuePaymentScreen extends GetView<ContinuePaymentController> {
                         color: AppColor.greyColor,
                         fontweight: FontWeight.bold,
                       ),
-                      CustomTextFormField(),
+                      GetBuilder<ContinuePaymentController>(
+                        builder: (controller) => CustomTextFormField(
+                          keyboardType:
+                              TextInputType.visiblePassword, ////////////////
+                          controller: controller.syriatelpasswordController,
+                          obscureText: controller.isobscare,
+                          validator: (value) {
+                            return controller.passValidator(value!);
+                          },
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              controller.isobscare
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                            ),
+                            onPressed: () {
+                              controller.change();
+                            },
+                          ),
+                        ),
+                      ),
                     ],
                   )
                 : Column(
@@ -96,7 +122,14 @@ class ContinuePaymentScreen extends GetView<ContinuePaymentController> {
                         color: AppColor.greyColor,
                         fontweight: FontWeight.bold,
                       ),
-                      CustomTextFormField(),
+                      CustomTextFormField(
+                        keyboardType: TextInputType.number, ////////////////
+                        controller: controller.accountNumberController,
+
+                        validator: (value) {
+                          return controller.passValidator(value!);
+                        },
+                      ),
                       SizedBox(
                         height: 16.h,
                       ),
@@ -107,7 +140,27 @@ class ContinuePaymentScreen extends GetView<ContinuePaymentController> {
                         color: AppColor.greyColor,
                         fontweight: FontWeight.bold,
                       ),
-                      CustomTextFormField(),
+                      GetBuilder<ContinuePaymentController>(
+                        builder: (controller) => CustomTextFormField(
+                          keyboardType:
+                              TextInputType.visiblePassword, ////////////////
+                          controller: controller.shampasswordController,
+                          obscureText: controller.isobscare,
+                          validator: (value) {
+                            return controller.passValidator(value!);
+                          },
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              controller.isobscare
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                            ),
+                            onPressed: () {
+                              controller.change();
+                            },
+                          ),
+                        ),
+                      ),
                     ],
                   ),
             SizedBox(
@@ -115,7 +168,9 @@ class ContinuePaymentScreen extends GetView<ContinuePaymentController> {
             ),
             CustomButton(
               data: 'تأكيد الدفع',
-              onPressed: () {},
+              onPressed: () {
+                controller.goToConfirmPaymentScreen();
+              },
             ),
           ],
         ),

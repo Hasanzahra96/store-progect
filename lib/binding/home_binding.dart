@@ -62,16 +62,18 @@ class PropertiesDetailsBinding extends Bindings {
 class VechicleFilterBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<VechiclesFilterController>(() => VechiclesFilterController(),
-        fenix: true);
+    Get.lazyPut<VechiclesFilterController>(
+      () => VechiclesFilterController(),
+    );
   }
 }
 
 class PropertiesFilterBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<PropertiesFilterController>(() => PropertiesFilterController(),
-        fenix: true);
+    Get.lazyPut<PropertiesFilterController>(
+      () => PropertiesFilterController(),
+    );
   }
 }
 
@@ -80,8 +82,8 @@ class VechicleFilterResultBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<VechiclesFilterResultController>(
-        () => VechiclesFilterResultController(),
-        fenix: true);
+      () => VechiclesFilterResultController(),
+    );
   }
 }
 
@@ -89,7 +91,7 @@ class PropertiesFilterResultBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<PropertiesFilterResultController>(
-        () => PropertiesFilterResultController(),
-        fenix: true);
+      () => PropertiesFilterResultController(),
+    );
   }
 }
