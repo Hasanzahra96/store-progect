@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/core/functions/show_custom_bottom_sheet.dart';
