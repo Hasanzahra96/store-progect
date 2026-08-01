@@ -4,6 +4,7 @@ import 'package:store/controller/main_nav_controller/drawer_controller/confirm_p
 import 'package:store/controller/main_nav_controller/drawer_controller/continue_payment_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/my_account_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/payment_verification_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscrip_activation_card_controller.dart';
@@ -73,6 +74,15 @@ class SubscripActivationCardPinding extends Bindings {
   void dependencies() {
     Get.lazyPut<SubscripActivationCardController>(
       () => SubscripActivationCardController(),
+    );
+  }
+}
+
+class PaymentVerificationPinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PaymentVerificationController>(
+      () => PaymentVerificationController(),
     );
   }
 }

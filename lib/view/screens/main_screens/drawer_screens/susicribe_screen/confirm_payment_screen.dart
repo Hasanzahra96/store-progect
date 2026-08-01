@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/confirm_payment_controller.dart';
 import 'package:store/core/constant/color.dart';
+import 'package:store/core/constant/routess.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_button.dart';
 import 'package:store/view/widgets/custom_text.dart';
@@ -143,7 +144,9 @@ class ConfirmPaymentScreen extends GetView<ConfirmPaymentController> {
             children: [
               CustomButton(
                 data: 'تأكيد',
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRouts.paymentVerificationScreen);
+                },
               ),
               CustomText(
                 align: AlignmentDirectional.center,

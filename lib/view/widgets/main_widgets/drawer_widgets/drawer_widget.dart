@@ -73,7 +73,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.contact_support_outlined,
             title: 'الشروط و الأحكام',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.termsandConditionsScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.info_outline_rounded,
