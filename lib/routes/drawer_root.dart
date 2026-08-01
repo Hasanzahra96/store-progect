@@ -9,9 +9,11 @@ import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/confirm_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/continue_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/digital_payment_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/payment_verification_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_detailes_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscrip_activation_card_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/terms_and_conditions_screen.dart';
 
 List<GetPage<dynamic>> drawerRoutes = [
   GetPage(
@@ -22,6 +24,10 @@ List<GetPage<dynamic>> drawerRoutes = [
   GetPage(
     name: AppRouts.shareAppScreen,
     page: () => const ShareAppScreen(),
+  ),
+  GetPage(
+    name: AppRouts.termsandConditionsScreen,
+    page: () => const TermsAndConditionsScreen(),
   ),
   GetPage(
     name: AppRouts.subscribeScreen,
@@ -52,5 +58,10 @@ List<GetPage<dynamic>> drawerRoutes = [
     name: AppRouts.subscripActivationCardScreen,
     page: () => const SubscripActivationCardScreen(),
     binding: SubscripActivationCardPinding(),
+  ),
+  GetPage(
+    name: AppRouts.paymentVerificationScreen,
+    page: () => const PaymentVerificationScreen(),
+    binding: PaymentVerificationPinding(),
   )
 ];

@@ -20,6 +20,7 @@ class AppRouts {
   /////////////=====================drawer root============///////////////
   static const String myAccountScreen = '/myAccountScreen';
   static const String shareAppScreen = '/shareAppScreen';
+  static const String termsandConditionsScreen = '/termsandConditionsScreen';
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
   static const String digitalPaymentScreen = '/digitalPaymentScreen';
@@ -39,7 +40,7 @@ class AppRouts {
   static const String propertiesFilterScreen = '/propertiesFilterScreen';
   static const String propertiesFilterResultScreen =
       '/propertiesFilterResultScreen';
-
+  static const String paymentVerificationScreen = '/paymentVerificationScreen';
 /////////////////// =================favorite root============///////////////
   static const String favoriteScreen = '/favoriteScreen';
   //////////////////================== my ads root============///////////////
