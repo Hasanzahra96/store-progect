@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDot extends StatelessWidget {
   final Offset? offset;
@@ -22,8 +23,8 @@ class CustomDot extends StatelessWidget {
     return Transform.translate(
       offset: offset!,
       child: Container(
-        width: width ?? 8,
-        height: height ?? 8,
+        width: width ?? 8.w,
+        height: height ?? 8.h,
         decoration:
             BoxDecoration(border: border, color: color, shape: BoxShape.circle),
       )

@@ -58,7 +58,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.point_of_sale_outlined,
             title: 'نقاط البيع',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.pointsOfSaleScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.language_outlined,

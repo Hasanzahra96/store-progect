@@ -5,6 +5,7 @@ import 'package:get/route_manager.dart';
 import 'package:store/binding/drawer_binding.dart';
 import 'package:store/core/constant/routess.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/points_of_sale_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/confirm_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/continue_payment_screen.dart';
@@ -29,6 +30,12 @@ List<GetPage<dynamic>> drawerRoutes = [
     name: AppRouts.termsandConditionsScreen,
     page: () => const TermsAndConditionsScreen(),
   ),
+  GetPage(
+    name: AppRouts.pointsOfSaleScreen,
+    page: () => const PointsOfSaleScreen(),
+    binding: PointsOfSaleBinding(),
+  ),
+  // ==================================
   GetPage(
     name: AppRouts.subscribeScreen,
     page: () => const SubscribeScreen(),

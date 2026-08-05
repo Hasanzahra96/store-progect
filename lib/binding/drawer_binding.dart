@@ -5,6 +5,7 @@ import 'package:store/controller/main_nav_controller/drawer_controller/continue_
 import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/my_account_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/payment_verification_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/points_of_sale_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscrip_activation_card_controller.dart';
@@ -83,6 +84,15 @@ class PaymentVerificationPinding extends Bindings {
   void dependencies() {
     Get.lazyPut<PaymentVerificationController>(
       () => PaymentVerificationController(),
+    );
+  }
+}
+
+class PointsOfSaleBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PointsOfSaleController>(
+      () => PointsOfSaleController(),
     );
   }
 }

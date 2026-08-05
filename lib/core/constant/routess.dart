@@ -21,6 +21,7 @@ class AppRouts {
   static const String myAccountScreen = '/myAccountScreen';
   static const String shareAppScreen = '/shareAppScreen';
   static const String termsandConditionsScreen = '/termsandConditionsScreen';
+  static const String pointsOfSaleScreen = '/pointsOfSaleScreen';
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
   static const String digitalPaymentScreen = '/digitalPaymentScreen';
