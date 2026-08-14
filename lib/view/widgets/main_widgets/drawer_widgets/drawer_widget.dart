@@ -65,7 +65,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.language_outlined,
             title: 'اللغة',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.languageScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.local_post_office_outlined,

@@ -4,12 +4,15 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/route_manager.dart';
 import 'package:store/binding/drawer_binding.dart';
 import 'package:store/core/constant/routess.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/language_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/points_of_sale_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/confirm_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/continue_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/digital_payment_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/payment_failed_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/payment_success_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/payment_verification_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_detailes_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/subscribe_screen.dart';
@@ -35,7 +38,12 @@ List<GetPage<dynamic>> drawerRoutes = [
     page: () => const PointsOfSaleScreen(),
     binding: PointsOfSaleBinding(),
   ),
-  // ==================================
+  GetPage(
+    name: AppRouts.languageScreen,
+    page: () => const LanguageScreen(),
+    binding: LanguageBinding(),
+  ),
+  // ===============subscriberoot===================
   GetPage(
     name: AppRouts.subscribeScreen,
     page: () => const SubscribeScreen(),
@@ -61,14 +69,27 @@ List<GetPage<dynamic>> drawerRoutes = [
     page: () => const ConfirmPaymentScreen(),
     binding: ConfirmPaymentBinding(),
   ),
+
+  GetPage(
+    name: AppRouts.paymentVerificationScreen,
+    page: () => const PaymentVerificationScreen(),
+    binding: PaymentVerificationPinding(),
+  ),
+
   GetPage(
     name: AppRouts.subscripActivationCardScreen,
     page: () => const SubscripActivationCardScreen(),
     binding: SubscripActivationCardPinding(),
   ),
   GetPage(
-    name: AppRouts.paymentVerificationScreen,
-    page: () => const PaymentVerificationScreen(),
-    binding: PaymentVerificationPinding(),
-  )
+    name: AppRouts.paymentSuccessScreen,
+    page: () => const PaymentSuccessScreen(),
+    binding: PaymentSuccessBinding(),
+  ),
+
+  GetPage(
+    name: AppRouts.paymentFailedScreen,
+    page: () => const PaymentFailedScreen(),
+    binding: PaymentFailedBinding(),
+  ),
 ];
