@@ -1,14 +1,17 @@
 import 'package:get/get.dart';
 import 'package:store/controller/main_nav_controller/advertisement_controller/add_photo_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/confirm_payment_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/continue_payment_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/confirm_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/continue_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/digital_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/language_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/my_account_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/payment_verification_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_failed_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_success_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_verification_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/points_of_sale_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/subscrip_activation_card_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_detailes_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscrip_activation_card_controller.dart';
 
 /////////////////////========drawerBinding========/////////////////////////////
 class MyAccountBinding extends Bindings {
@@ -21,6 +24,22 @@ class MyAccountBinding extends Bindings {
       () => AddPhotoController(),
       tag: 'myaccount',
     );
+  }
+}
+
+class PointsOfSaleBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PointsOfSaleController>(
+      () => PointsOfSaleController(),
+    );
+  }
+}
+
+class LanguageBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => LanguageController());
   }
 }
 
@@ -88,11 +107,20 @@ class PaymentVerificationPinding extends Bindings {
   }
 }
 
-class PointsOfSaleBinding extends Bindings {
+class PaymentSuccessBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<PointsOfSaleController>(
-      () => PointsOfSaleController(),
+    Get.lazyPut<PaymentSuccessController>(
+      () => PaymentSuccessController(),
+    );
+  }
+}
+
+class PaymentFailedBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PaymentFailedController>(
+      () => PaymentFailedController(),
     );
   }
 }

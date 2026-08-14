@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_detailes_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_detailes_controller.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/core/constant/routess.dart';
 import 'package:store/core/utile/media_query.dart';

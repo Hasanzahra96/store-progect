@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:step_progress/step_progress.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/payment_verification_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_verification_controller.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:flutter_animate/flutter_animate.dart';

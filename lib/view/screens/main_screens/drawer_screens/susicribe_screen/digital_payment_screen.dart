@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/digital_payment_controller.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/data/datasource/static/drawer_list/payment_list.dart';
 import 'package:store/data/model/drawer_model/payment_model.dart';

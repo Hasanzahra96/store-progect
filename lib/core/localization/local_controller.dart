@@ -4,28 +4,29 @@ import 'package:store/core/services/service.dart';
 
 class LocalController extends GetxController {
   String? language;
-  MyService myService = Get.find();
+  late final MyService myService;
   bool isArabic = false;
   bool isEnglish = false;
+
   void changeLang(String langcode) {
+    _setSelectedLanguage(langcode);
+
     Locale locale = Locale(langcode);
     myService.sharedPreferences.setString('lang', langcode);
     Get.updateLocale(locale);
-
-    update();
   }
 
   @override
   void onInit() {
-    update();
-    String? langsharedPref = myService.sharedPreferences.getString('lang');
-
-    if (langsharedPref == 'ar') {
-      language = 'ar';
-    } else if (langsharedPref == 'en') {
-      language = 'en';
-    }
-
+    myService = Get.find<MyService>();
     super.onInit();
+    _setSelectedLanguage(myService.sharedPreferences.getString('lang'));
+  }
+
+  void _setSelectedLanguage(String? langcode) {
+    language = langcode ?? 'ar';
+    isArabic = langcode == 'ar';
+    isEnglish = langcode == 'en';
+    update();
   }
 }
