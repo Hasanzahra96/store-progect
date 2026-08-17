@@ -9,6 +9,7 @@ import 'package:store/controller/main_nav_controller/drawer_controller/subscribe
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_success_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/payment_verification_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/points_of_sale_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/show_subscribe_data_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_detailes_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscrip_activation_card_controller.dart';
@@ -121,6 +122,15 @@ class PaymentFailedBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<PaymentFailedController>(
       () => PaymentFailedController(),
+    );
+  }
+}
+
+class ShowSubscribeDataBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<ShowSubscribeDataController>(
+      () => ShowSubscribeDataController(),
     );
   }
 }

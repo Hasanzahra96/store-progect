@@ -23,6 +23,7 @@ class AppRouts {
   static const String termsandConditionsScreen = '/termsandConditionsScreen';
   static const String pointsOfSaleScreen = '/pointsOfSaleScreen';
   static const String languageScreen = '/languageScreen';
+  static const String aboutOfAppScreen = '/aboutOfAppScreen';
   //==================subscriberoot===
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';
@@ -32,7 +33,8 @@ class AppRouts {
   static const String paymentVerificationScreen = '/paymentVerificationScreen';
   static const String paymentSuccessScreen = '/paymentSuccessScreen';
   static const String paymentFailedScreen = '/paymentFailedScreen';
-  static const String subscripActivationCardScreen =
+  static const String showSubscribeDataScreen = '/showSubscribeDataScreen';
+  static const String subscribeActivationCardScreen =
       '/subscripActivationCardScreen';
   ////////////////// ===================== home root============///////////////
   static const String homeScreen = '/homeScreen';
