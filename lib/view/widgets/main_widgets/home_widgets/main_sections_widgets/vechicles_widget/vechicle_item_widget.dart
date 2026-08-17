@@ -129,10 +129,10 @@ class VechicleItemWidget extends GetView<VechiclesController> {
                             fontsize: 14.sp,
                             color: AppColor.browneColor,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
                             visualDensity: VisualDensity.compact,
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.share_outlined,
                             ),
                             iconSize: 22.sp,
@@ -142,7 +142,7 @@ class VechicleItemWidget extends GetView<VechiclesController> {
                           IconButton(
                             visualDensity: VisualDensity.compact,
                             onPressed: () {},
-                            icon: Icon(Icons.favorite_border_outlined),
+                            icon: const Icon(Icons.favorite_border_outlined),
                             iconSize: 22.sp,
                             color: AppColor.greyColor,
                           ),

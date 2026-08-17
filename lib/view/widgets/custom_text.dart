@@ -31,7 +31,7 @@ class CustomText extends StatelessWidget {
       margin: margin,
       alignment: align,
       child: Text(data,
-          maxLines: maxLines,
+          maxLines: maxLines ?? 10,
           textAlign: textAlign,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(

@@ -84,7 +84,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.info_outline_rounded,
             title: 'حول التطبيق',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.aboutOfAppScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.logout,

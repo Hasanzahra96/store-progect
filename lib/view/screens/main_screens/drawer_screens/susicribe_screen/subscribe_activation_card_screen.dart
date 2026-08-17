@@ -10,9 +10,9 @@ import 'package:store/view/widgets/custom_button.dart';
 import 'package:store/view/widgets/custom_text.dart';
 import 'package:store/view/widgets/custom_text_rich.dart';
 
-class SubscripActivationCardScreen
+class SubscribeActivationCardScreen
     extends GetView<SubscripActivationCardController> {
-  const SubscripActivationCardScreen({super.key});
+  const SubscribeActivationCardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

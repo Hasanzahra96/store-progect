@@ -19,6 +19,8 @@ class PropertyItemWidget extends GetView<PropertiesController> {
           controller.goToPropertyDetails(propertyItemModel);
         },
         child: Container(
+            height: 140.h,
+            constraints: const BoxConstraints(minHeight: 140),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black12),
               color: AppColor.whiteColor,
@@ -32,7 +34,6 @@ class PropertyItemWidget extends GetView<PropertiesController> {
                 ),
               ],
             ),
-            height: 140.h,
             child: Row(children: [
               Expanded(
                 child: Padding(
@@ -107,7 +108,7 @@ class PropertyItemWidget extends GetView<PropertiesController> {
                           ),
                           SizedBox(width: 4.w),
                           Flexible(
-                            flex: 3,
+                            flex: 5,
                             child: CustomText(
                               data: propertyItemModel.state,
                               fontsize: 12.sp,
@@ -165,6 +166,9 @@ class PropertyItemWidget extends GetView<PropertiesController> {
                     aspectRatio: 1 / 1,
                     child: Image.asset(
                       propertyItemModel.image ?? '',
+                      filterQuality: FilterQuality.high,
+                      width: double.infinity,
+                      gaplessPlayback: true,
                       fit: BoxFit.cover,
                     ),
                   ),
