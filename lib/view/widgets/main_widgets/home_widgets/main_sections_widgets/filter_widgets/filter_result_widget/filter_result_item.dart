@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store/core/constant/color.dart';
-import 'package:store/core/utile/media_query.dart';
 import 'package:store/view/widgets/custom_text.dart';
 import 'package:store/view/widgets/main_widgets/home_widgets/main_sections_widgets/filter_widgets/filter_result_widget/feature_item_widget.dart';
 
@@ -33,9 +32,6 @@ class FilterResultItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        minHeight: context.screenHeight < 650 ? 410 : 430.h,
-      ),
       decoration: BoxDecoration(
         color: AppColor.button2Color,
         borderRadius: BorderRadius.all(

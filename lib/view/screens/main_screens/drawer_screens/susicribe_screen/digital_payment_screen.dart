@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:store/controller/main_nav_controller/drawer_controller/digital_payment_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/digital_payment_controller.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/data/datasource/static/drawer_list/payment_list.dart';
+import 'package:store/data/model/drawer_model/payment_model.dart';
 import 'package:store/view/widgets/custom_Text_Form_Field.dart';
 import 'package:store/view/widgets/custom_appbar.dart';
 import 'package:store/view/widgets/custom_button.dart';
@@ -36,6 +37,7 @@ class DigitalPaymentScreen extends GetView<DigitalPaymentController> {
                 align: AlignmentDirectional.centerStart,
                 data: 'كود الخصم',
                 fontsize: 18.sp,
+                fontweight: FontWeight.bold,
                 color: AppColor.browneColor,
               ),
               Form(
@@ -93,6 +95,7 @@ class DigitalPaymentScreen extends GetView<DigitalPaymentController> {
                 data: 'ملخص الدفع',
                 fontsize: 18.sp,
                 color: AppColor.browneColor,
+                fontweight: FontWeight.bold,
               ),
               SizedBox(
                 height: 16.h,
@@ -167,32 +170,56 @@ class DigitalPaymentScreen extends GetView<DigitalPaymentController> {
                   return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: List.generate(
-                          paymentList.length,
-                          (index) => Flexible(
-                                child: CashPaymentWidget(
-                                  index: index,
-                                  image: paymentList[index].image,
-                                  name: paymentList[index].name,
-                                  onPress: () {
-                                    return controller
-                                        .selectPaymentMethod(index);
-                                  },
-                                ),
-                              )));
+                        paymentList.length,
+                        (index) {
+                          PaymentModel payment = paymentList[index];
+                          return Flexible(
+                            child: CashPaymentWidget(
+                              index: index,
+                              image: payment.image,
+                              name: payment.name,
+                              onPress: () {
+                                return controller.selectPaymentMethod(
+                                    index, payment.id);
+                              },
+                            ),
+                          );
+                        },
+                      ));
                 },
               ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(16.r),
-          child: CustomButton(
-            data: 'متابعة للدفع',
-            onPressed: () {},
-          ),
-        ),
+      bottomNavigationBar: GetBuilder<DigitalPaymentController>(
+        builder: (controller) {
+          return SafeArea(
+            child: Padding(
+              padding: EdgeInsets.all(16.r),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomButton(
+                    data: 'متابعة للدفع',
+                    onPressed: () {
+                      controller.onContinuePressed();
+                    },
+                  ),
+                  controller.showPaymentError
+                      ? CustomText(
+                          align: AlignmentDirectional.center,
+                          data:
+                              'يرجى اختيار طريقة الدفع للمتابعة إلى بوابة الدفع',
+                          fontsize: 12.sp,
+                          color: AppColor.redColor,
+                        )
+                      : const SizedBox.shrink(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

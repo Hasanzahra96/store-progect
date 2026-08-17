@@ -33,7 +33,7 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                   SizedBox(
                     height: 40.h,
                   ),
-                  AspectRatio(
+                  const AspectRatio(
                     aspectRatio: 6 / 3,
                     child: Image(
                       image: AssetImage(AppImageAssets.forgotPassword),
@@ -117,7 +117,7 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
           final kayboardOpen = MediaQuery.of(context).viewInsets.bottom;
           return SafeArea(
             child: AnimatedPadding(
-              duration: Duration(milliseconds: 100),
+              duration: const Duration(milliseconds: 100),
               curve: Curves.easeInOut,
               padding: EdgeInsets.only(bottom: kayboardOpen),
               child: Padding(

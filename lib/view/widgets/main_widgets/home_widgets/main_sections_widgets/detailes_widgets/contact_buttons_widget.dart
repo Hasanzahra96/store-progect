@@ -4,12 +4,18 @@ import 'package:store/core/constant/color.dart';
 import 'package:store/view/widgets/custom_button.dart';
 
 class ContactButtonsWidget extends StatelessWidget {
+  final String? firstText;
+  final String? lastText;
+  final double? fontsize;
   final Function()? onPressedCall;
   final Function()? onPressedWhatsApp;
   const ContactButtonsWidget({
     super.key,
     required this.onPressedCall,
     required this.onPressedWhatsApp,
+    this.firstText,
+    this.lastText,
+    this.fontsize,
   });
 
   @override
@@ -18,8 +24,8 @@ class ContactButtonsWidget extends StatelessWidget {
       children: [
         Expanded(
           child: CustomButton(
-            data: 'اتصال',
-            fontsize: 18.sp,
+            data: firstText ?? 'اتصال',
+            fontsize: fontsize ?? 18.sp,
             height: 48.h,
             minWidth: 168.w,
             colorB: AppColor.buttonColor,
@@ -33,8 +39,8 @@ class ContactButtonsWidget extends StatelessWidget {
         ),
         Expanded(
           child: CustomButton(
-            data: 'واتساب',
-            fontsize: 18.sp,
+            data: lastText ?? 'واتساب',
+            fontsize: fontsize ?? 18.sp,
             height: 48.h,
             fontWeight: FontWeight.bold,
             minWidth: 158.w,

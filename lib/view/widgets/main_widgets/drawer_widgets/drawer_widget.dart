@@ -58,12 +58,16 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.point_of_sale_outlined,
             title: 'نقاط البيع',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.pointsOfSaleScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.language_outlined,
             title: 'اللغة',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.languageScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.local_post_office_outlined,
@@ -73,12 +77,16 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.contact_support_outlined,
             title: 'الشروط و الأحكام',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.termsandConditionsScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.info_outline_rounded,
             title: 'حول التطبيق',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.aboutOfAppScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.logout,

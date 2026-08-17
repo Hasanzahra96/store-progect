@@ -10,7 +10,7 @@ import 'package:store/core/localization/local_controller.dart';
 import 'package:store/core/localization/transilation.dart';
 import 'package:store/core/services/service.dart';
 
-import 'package:store/routes.dart';
+import 'package:store/routes/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
