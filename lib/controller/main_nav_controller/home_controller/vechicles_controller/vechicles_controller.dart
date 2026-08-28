@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:store/core/constant/routess.dart';
+import 'package:store/core/services/favorite_store.dart';
 import 'package:store/data/datasource/static/vechicles_lists/all_state_car_lists.dart';
 import 'package:store/data/datasource/static/vechicles_lists/vechical_item_list.dart';
 import 'package:store/data/datasource/static/vechicles_lists/car_brand_list.dart';
@@ -123,6 +124,13 @@ class VechiclesController extends GetxController {
       'payTypeId': vechicleItemModel.payTypeId,
     });
     update();
+  }
+
+  ////////////
+  final favoriteStore = Get.find<FavoriteStore>();
+
+  void toggleVechicleFavorite(String vehicleId) {
+    favoriteStore.toggleVehicleFavorite(vehicleId);
   }
 
   /// دالة الفلترة الأساسية

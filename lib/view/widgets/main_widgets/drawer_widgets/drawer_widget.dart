@@ -72,7 +72,9 @@ class DrawerWidget extends StatelessWidget {
           CustomListTile(
             icon: Icons.local_post_office_outlined,
             title: 'اقترح مكاتب',
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRouts.suggestOfficeScreen);
+            },
           ),
           CustomListTile(
             icon: Icons.contact_support_outlined,

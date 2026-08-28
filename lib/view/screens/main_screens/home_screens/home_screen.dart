@@ -138,7 +138,7 @@ class Homescreen extends GetView<HomeController> {
                     GetBuilder<HomeController>(builder: (controller) {
                       return Skeletonizer(
                         enabled: controller.isLoading,
-                        child: const PropertiesSuggestedView(),
+                        child: PropertiesSuggestedView(),
                       );
                     }),
                     SizedBox(height: 30.h),
@@ -156,7 +156,7 @@ class Homescreen extends GetView<HomeController> {
                     GetBuilder<HomeController>(builder: (controller) {
                       return Skeletonizer(
                         enabled: controller.isLoading,
-                        child: const VehiclesSuggestedView(),
+                        child: VehiclesSuggestedView(),
                       );
                     }),
                   ],

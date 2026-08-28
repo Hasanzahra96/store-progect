@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:store/core/constant/routess.dart';
 import 'package:store/core/functions/auth_bottom_sheet.dart';
 import 'package:store/core/functions/sub_bottom_sheet.dart';
+import 'package:store/core/services/favorite_store.dart';
 import 'package:store/data/datasource/static/vechicles_lists/vechical_item_list.dart';
 import 'package:store/data/model/vechicle_model/vechicle_item_model.dart';
 
@@ -51,7 +52,7 @@ class VechiclesDetailsController extends GetxController {
     update();
   }
 
-  goToAdvertscreen(VechicleItemModel vechicleItemModel) {
+  goToAdvertscreen() {
     Get.toNamed(AppRouts.advertiserAccountScreen, arguments: {
       // 'vechicleItemModel': vechicleItemModel,
       'user': vechicleItemModel.user,
@@ -66,6 +67,13 @@ class VechiclesDetailsController extends GetxController {
       onPressed1: () {},
       onPressed2: () {},
     );
+  }
+
+  ////////////
+  final favoriteStore = Get.find<FavoriteStore>();
+
+  void toggleVechicleFavorite(String vehicleId) {
+    favoriteStore.toggleVehicleFavorite(vehicleId);
   }
 
   ////////////////////////////

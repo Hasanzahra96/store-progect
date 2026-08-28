@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:store/controller/main_nav_controller/home_controller/home_controller.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/data/model/properties_model/property_item_model.dart';
 import 'package:store/view/widgets/custom_text.dart';
 
-class PropertiesSuggestedWidget extends StatelessWidget {
+class PropertiesSuggestedWidget extends GetView<HomeController> {
   final PropertyItemModel propertyItemModel;
-  const PropertiesSuggestedWidget({super.key, required this.propertyItemModel});
+
+  const PropertiesSuggestedWidget({
+    super.key,
+    required this.propertyItemModel,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return Container(
       width: 280.w,
       decoration: BoxDecoration(
@@ -76,6 +81,7 @@ class PropertiesSuggestedWidget extends StatelessWidget {
             ),
           ),
           Stack(
+            alignment: AlignmentDirectional.topEnd,
             children: [
               AspectRatio(
                 aspectRatio: 16 / 9,
@@ -87,19 +93,32 @@ class PropertiesSuggestedWidget extends StatelessWidget {
                   filterQuality: FilterQuality.high,
                 ),
               ),
-              Positioned(
-                top: 8,
-                left: isRtl ? 8 : 230,
-                child: CircleAvatar(
-                  backgroundColor: AppColor.whiteColor,
-                  radius: 16.r,
-                  child: Icon(
-                    Icons.favorite_border,
-                    size: 24.sp,
-                    color: AppColor.fontColor,
+              Obx(() {
+                final isFavorite = controller.favoriteStore
+                    .isPropertyFavorite(propertyItemModel.id);
+
+                return Padding(
+                  padding: EdgeInsets.all(8.r),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: AppColor.whiteColor, shape: BoxShape.circle),
+                    child: IconButton(
+                        visualDensity: VisualDensity.compact,
+                        highlightColor: AppColor.tranColor,
+                        onPressed: () {
+                          controller
+                              .togglePropertyFavorite(propertyItemModel.id);
+                        },
+                        icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          size: 30.sp,
+                          color: isFavorite
+                              ? AppColor.redColor
+                              : AppColor.fontColor,
+                        )),
                   ),
-                ),
-              )
+                );
+              })
             ],
           ),
           Padding(

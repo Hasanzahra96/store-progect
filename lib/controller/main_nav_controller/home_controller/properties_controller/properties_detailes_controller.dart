@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:store/core/constant/routess.dart';
 import 'package:store/core/functions/auth_bottom_sheet.dart';
 import 'package:store/core/functions/sub_bottom_sheet.dart';
+import 'package:store/core/services/favorite_store.dart';
 import 'package:store/data/datasource/static/prperties_lists/property_item_list.dart';
 import 'package:store/data/model/properties_model/property_item_model.dart';
 
@@ -97,7 +98,7 @@ class PropertiesDetailsController extends GetxController {
     update();
   }
 
-  goToAdvertscreen(PropertyItemModel propertyItemModel) {
+  goToAdvertscreen() {
     Get.toNamed(AppRouts.advertiserAccountScreen, arguments: {
       // 'propertyItemModel': propertyItemModel,
       'user': propertyItemModel.user,
@@ -120,6 +121,11 @@ class PropertiesDetailsController extends GetxController {
       onPressed1: () {},
       onPressed2: () {},
     );
+  }
+
+  final favoriteStore = Get.find<FavoriteStore>();
+  void togglePropertyFavorite(String propertyId) {
+    favoriteStore.togglePropertyFavorite(propertyId);
   }
 
   @override

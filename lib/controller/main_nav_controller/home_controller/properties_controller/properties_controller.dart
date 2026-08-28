@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:store/core/constant/routess.dart';
+import 'package:store/core/services/favorite_store.dart';
 import 'package:store/data/datasource/static/prperties_lists/all_state_property_lists.dart';
 import 'package:store/data/datasource/static/prperties_lists/property_brand_list.dart';
 import 'package:store/data/datasource/static/prperties_lists/property_item_list.dart';
@@ -97,6 +98,12 @@ class PropertiesController extends GetxController {
       'payTypeId': propertyItemModel.payTypeId,
     });
     update();
+  }
+
+////////////
+  final favoriteStore = Get.find<FavoriteStore>();
+  void togglePropertyFavorite(String propertyId) {
+    favoriteStore.togglePropertyFavorite(propertyId);
   }
 
   /// دالة الفلترة الأساسية

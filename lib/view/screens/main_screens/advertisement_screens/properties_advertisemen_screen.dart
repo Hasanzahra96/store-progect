@@ -32,13 +32,13 @@ class PropertiesAdvertisementScreen
         body: SafeArea(
           child: SingleChildScrollView(
               child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
+                  padding: EdgeInsets.all(
+                    16.r,
                   ),
                   child: Column(children: [
                     const MainAdreesWidget(
                       data: 'صور العقار',
-                      top: 16,
+                      top: 0,
                     ),
                     AddPhotos(
                       controller: controller.addPhotoController,

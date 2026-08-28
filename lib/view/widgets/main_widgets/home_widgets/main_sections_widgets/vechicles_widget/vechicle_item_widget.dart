@@ -8,7 +8,11 @@ import 'package:store/view/widgets/custom_text.dart';
 
 class VechicleItemWidget extends GetView<VechiclesController> {
   final VechicleItemModel vechicleItemModel;
-  const VechicleItemWidget({super.key, required this.vechicleItemModel});
+
+  const VechicleItemWidget({
+    super.key,
+    required this.vechicleItemModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -139,13 +143,27 @@ class VechicleItemWidget extends GetView<VechiclesController> {
                             color: AppColor.greyColor,
                             onPressed: () {},
                           ),
-                          IconButton(
-                            visualDensity: VisualDensity.compact,
-                            onPressed: () {},
-                            icon: const Icon(Icons.favorite_border_outlined),
-                            iconSize: 22.sp,
-                            color: AppColor.greyColor,
-                          ),
+                          Obx(() {
+                            final isFavorite = controller.favoriteStore
+                                .isVehicleFavorite(vechicleItemModel.id);
+
+                            return IconButton(
+                              visualDensity: VisualDensity.compact,
+                              onPressed: () {
+                                controller.toggleVechicleFavorite(
+                                    vechicleItemModel.id);
+                              },
+                              icon: Icon(
+                                isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                              ),
+                              iconSize: 22.sp,
+                              color: isFavorite
+                                  ? AppColor.redColor
+                                  : AppColor.greyColor,
+                            );
+                          }),
                         ],
                       )
                     ],

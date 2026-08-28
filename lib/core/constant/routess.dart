@@ -24,6 +24,7 @@ class AppRouts {
   static const String pointsOfSaleScreen = '/pointsOfSaleScreen';
   static const String languageScreen = '/languageScreen';
   static const String aboutOfAppScreen = '/aboutOfAppScreen';
+  static const String suggestOfficeScreen = '/suggestOfficeScreen';
   //==================subscriberoot===
   static const String subscribeScreen = '/subscribeScreen';
   static const String subscribeDetailesScreen = '/subscribeDetailesScreen';

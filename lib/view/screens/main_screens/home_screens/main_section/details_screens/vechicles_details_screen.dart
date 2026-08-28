@@ -47,17 +47,26 @@ class VechiclesDetailsScreen extends GetView<VechiclesDetailsController> {
                     },
                   ),
                   SizedBox(height: 8.h),
-                  AccountInfoWidget(
-                    userName: controller.vechicleItemModel.user ?? '',
-                    onPresseduserName: () {
-                      controller.goToAdvertscreen(controller.vechicleItemModel);
-                    },
+                  Obx(() {
+                    final isFavorite = controller.favoriteStore
+                        .isVehicleFavorite(controller.vechicleItemModel.id);
 
-                    /// قسم معلومات الحساب
-                    onPressedButton: () {},
-                    onPressedFav: () {},
-                    onPressedShare: () {},
-                  ),
+                    return AccountInfoWidget(
+                      userName: controller.vechicleItemModel.user ?? '',
+                      onPresseduserName: () {
+                        controller.goToAdvertscreen();
+                      },
+                      favorite: isFavorite,
+
+                      /// قسم معلومات الحساب
+                      onPressedButton: () {},
+                      onPressedFav: () {
+                        controller.toggleVechicleFavorite(
+                            controller.vechicleItemModel.id);
+                      },
+                      onPressedShare: () {},
+                    );
+                  }),
                   SizedBox(height: 8.h),
                   const CarDetInfoDetaileSection(), ///////// قسم تفاصيل معلومات المركبة
                   const MainAdreesWidget(
