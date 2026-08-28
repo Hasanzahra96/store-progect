@@ -29,13 +29,13 @@ class VechiclesAdvertisementScreen
         body: SafeArea(
           child: SingleChildScrollView(
               child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.w,
+            padding: EdgeInsets.all(
+              16.r,
             ),
             child: Column(children: [
               const MainAdreesWidget(
+                top: 0,
                 data: 'صور المركبة',
-                top: 16,
               ),
               AddPhotos(
                 controller: controller.addPhotoController,

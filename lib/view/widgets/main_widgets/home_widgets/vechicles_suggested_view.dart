@@ -32,6 +32,7 @@ class VehiclesSuggestedView extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8.w),
                 child: VechiclesSuggestedWidget(
+                    index: index,
                     vechicleItemModel: suggestedvehiclesList[index]),
               );
             },

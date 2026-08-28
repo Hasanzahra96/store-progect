@@ -9,6 +9,7 @@ import 'package:store/view/screens/main_screens/drawer_screens/language_screen.d
 import 'package:store/view/screens/main_screens/drawer_screens/my_account_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/points_of_sale_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/share_app_screen.dart';
+import 'package:store/view/screens/main_screens/drawer_screens/suggest_office_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/confirm_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/continue_payment_screen.dart';
 import 'package:store/view/screens/main_screens/drawer_screens/susicribe_screen/digital_payment_screen.dart';
@@ -49,6 +50,12 @@ List<GetPage<dynamic>> drawerRoutes = [
     name: AppRouts.aboutOfAppScreen,
     page: () => const AboutOfAppScreen(),
   ),
+  GetPage(
+    name: AppRouts.suggestOfficeScreen,
+    page: () => const SuggestOfficeScreen(),
+    binding: SuggestOfficeBinding(),
+  ),
+
   // ===============subscribeRoot===================
   GetPage(
     name: AppRouts.subscribeScreen,

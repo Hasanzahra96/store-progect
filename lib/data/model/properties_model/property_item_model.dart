@@ -21,6 +21,7 @@ class PropertyItemModel {
   final int? price;
   final String? user;
   final String? userId;
+  bool isFavorite;
 
   PropertyItemModel(
       {required this.id,
@@ -42,6 +43,7 @@ class PropertyItemModel {
       this.user,
       this.userId,
       this.type,
+      this.isFavorite = false,
       this.area});
 
   factory PropertyItemModel.fromJson(Map<String, dynamic> json) {

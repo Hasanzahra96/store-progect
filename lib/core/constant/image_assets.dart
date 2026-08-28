@@ -28,6 +28,7 @@ class AppImageAssets {
   static const String vvv = '$rootImages/vvv.png';
   static const String ar = '$rootImages/ar.png';
   static const String en = '$rootImages/en.png';
+  static const String realEstate = '$rootImages/realEstate.png';
   //==========icons==========//
   static const String costumerservice = '$rootIcons/costumerService.svg';
   static const String car = '$rootIcons/car.svg';

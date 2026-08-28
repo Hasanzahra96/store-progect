@@ -16,8 +16,10 @@ class VechicleItemModel {
   final String? user;
   final String? userId;
   final String? feuleType;
+  bool isFavorite;
 
   VechicleItemModel({
+    this.isFavorite = false,
     required this.id,
     required this.brandId,
     required this.modelId,

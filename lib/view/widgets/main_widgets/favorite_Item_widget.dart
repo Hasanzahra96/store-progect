@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store/core/constant/color.dart';
 import 'package:store/view/widgets/custom_text.dart';
-import 'package:store/view/widgets/main_widgets/home_widgets/main_sections_widgets/filter_widgets/filter_result_widget/feature_item_widget.dart';
 
-class FilterResultItem extends StatelessWidget {
+class FavoriteItemWidget extends StatelessWidget {
   final String? imagePath;
   final String? title;
   final String? subTitle;
@@ -16,7 +15,7 @@ class FilterResultItem extends StatelessWidget {
   final String? regon;
   final List<Map<String, String>>? list;
 
-  const FilterResultItem(
+  const FavoriteItemWidget(
       {super.key,
       this.imagePath,
       this.title,
@@ -65,9 +64,9 @@ class FilterResultItem extends StatelessWidget {
                   backgroundColor: AppColor.whiteColor,
                   radius: 16.r,
                   child: Icon(
-                    Icons.favorite_border,
+                    Icons.favorite,
                     size: 24.sp,
-                    color: AppColor.fontColor,
+                    color: AppColor.redColor,
                   ),
                 ),
                 trailing: Container(

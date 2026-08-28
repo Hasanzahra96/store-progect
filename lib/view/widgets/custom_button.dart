@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
         ),
         onPressed: isEnabel ? onPressed : null,
         child: CustomText(
-          fontweight: fontWeight,
+          fontweight: fontWeight ?? FontWeight.w500,
           data: data!,
           fontsize: fontsize ?? 18.sp,
           color: isEnabel ? colorF : AppColor.greyColor,

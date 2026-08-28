@@ -47,17 +47,25 @@ class PropertesDetailsScreen extends GetView<PropertiesDetailsController> {
                     },
                   ),
                   SizedBox(height: 8.h),
-                  AccountInfoWidget(
-                    userName: controller.propertyItemModel.user ?? '',
-                    onPresseduserName: () {
-                      controller.goToAdvertscreen(controller.propertyItemModel);
-                    },
+                  Obx(() {
+                    final isFavorite = controller.favoriteStore
+                        .isPropertyFavorite(controller.propertyItemModel.id);
+                    return AccountInfoWidget(
+                      userName: controller.propertyItemModel.user ?? '',
+                      onPresseduserName: () {
+                        controller.goToAdvertscreen();
+                      },
+                      favorite: isFavorite,
 
-                    /// قسم معلومات الحساب
-                    onPressedButton: () {},
-                    onPressedFav: () {},
-                    onPressedShare: () {},
-                  ),
+                      /// قسم معلومات الحساب
+                      onPressedButton: () {},
+                      onPressedFav: () {
+                        controller.togglePropertyFavorite(
+                            controller.propertyItemModel.id);
+                      },
+                      onPressedShare: () {},
+                    );
+                  }),
 
                   SizedBox(height: 8.h),
                   controller.propertyId == '4'

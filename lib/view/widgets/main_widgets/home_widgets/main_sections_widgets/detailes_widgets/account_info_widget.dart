@@ -10,13 +10,17 @@ class AccountInfoWidget extends StatelessWidget {
   final Function()? onPressedButton;
   final Function()? onPressedShare;
   final Function()? onPressedFav;
-  const AccountInfoWidget(
-      {super.key,
-      required this.userName,
-      this.onPressedButton,
-      this.onPressedShare,
-      this.onPressedFav,
-      this.onPresseduserName});
+  final bool? favorite;
+
+  const AccountInfoWidget({
+    super.key,
+    required this.userName,
+    this.onPressedButton,
+    this.onPressedShare,
+    this.onPressedFav,
+    this.onPresseduserName,
+    this.favorite,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,7 @@ class AccountInfoWidget extends StatelessWidget {
             color: AppColor.browneColor,
           ),
         ),
-        Spacer(),
+        const Spacer(),
         CustomButton(
           data: 'متابعه',
           fontsize: 14.sp,
@@ -50,7 +54,7 @@ class AccountInfoWidget extends StatelessWidget {
           colorF: Colors.white,
           onPressed: onPressedButton,
         ),
-        Spacer(
+        const Spacer(
           flex: 2,
         ),
         IconButton(
@@ -65,9 +69,10 @@ class AccountInfoWidget extends StatelessWidget {
         IconButton(
           visualDensity: VisualDensity.compact,
           onPressed: onPressedFav,
-          icon: Icon(Icons.favorite_border_outlined),
+          icon:
+              Icon(favorite! ? Icons.favorite : Icons.favorite_border_outlined),
           iconSize: 24.sp,
-          color: AppColor.buttonColor,
+          color: favorite! ? AppColor.redColor : AppColor.buttonColor,
         ),
       ],
     );

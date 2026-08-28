@@ -13,6 +13,7 @@ import 'package:store/controller/main_nav_controller/drawer_controller/subscribe
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscribe_detailes_controller.dart';
 import 'package:store/controller/main_nav_controller/drawer_controller/subscribe_controller/subscrip_activation_card_controller.dart';
+import 'package:store/controller/main_nav_controller/drawer_controller/suggest_office_controller.dart';
 
 /////////////////////========drawerBinding========/////////////////////////////
 class MyAccountBinding extends Bindings {
@@ -41,6 +42,17 @@ class LanguageBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => LanguageController());
+  }
+}
+
+class SuggestOfficeBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => SuggestOfficeController());
+    Get.lazyPut<AddPhotoController>(
+      () => AddPhotoController(),
+      tag: 'suggestOffice',
+    );
   }
 }
 

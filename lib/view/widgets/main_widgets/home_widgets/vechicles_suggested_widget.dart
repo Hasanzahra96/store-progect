@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:store/controller/main_nav_controller/home_controller/home_controller.dart';
 import 'package:store/core/constant/color.dart';
 
 import 'package:store/data/model/vechicle_model/vechicle_item_model.dart';
 import 'package:store/view/widgets/custom_text.dart';
 
-class VechiclesSuggestedWidget extends StatelessWidget {
+class VechiclesSuggestedWidget extends GetView<HomeController> {
   final VechicleItemModel vechicleItemModel;
-  const VechiclesSuggestedWidget({super.key, required this.vechicleItemModel});
+  final int index;
+  const VechiclesSuggestedWidget(
+      {super.key, required this.index, required this.vechicleItemModel});
 
   @override
   Widget build(BuildContext context) {
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return Container(
       width: 280.w,
       decoration: BoxDecoration(
@@ -78,6 +81,7 @@ class VechiclesSuggestedWidget extends StatelessWidget {
             ),
           ),
           Stack(
+            alignment: AlignmentDirectional.topEnd,
             children: [
               AspectRatio(
                 aspectRatio: 16 / 9,
@@ -86,19 +90,32 @@ class VechiclesSuggestedWidget extends StatelessWidget {
                     filterQuality: FilterQuality.high,
                     fit: BoxFit.cover),
               ),
-              Positioned(
-                top: 8,
-                left: isRtl ? 8 : 230,
-                child: CircleAvatar(
-                  backgroundColor: AppColor.whiteColor,
-                  radius: 16.r,
-                  child: Icon(
-                    Icons.favorite_border,
-                    size: 24.sp,
-                    color: AppColor.fontColor,
+              Obx(() {
+                final isFavorite = controller.favoriteStore
+                    .isVehicleFavorite(vechicleItemModel.id);
+
+                return Padding(
+                  padding: EdgeInsets.all(8.r),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: AppColor.whiteColor, shape: BoxShape.circle),
+                    child: IconButton(
+                        visualDensity: VisualDensity.compact,
+                        highlightColor: AppColor.tranColor,
+                        onPressed: () {
+                          controller
+                              .toggleVechicleFavorite(vechicleItemModel.id);
+                        },
+                        icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_border,
+                          size: 30.sp,
+                          color: isFavorite
+                              ? AppColor.redColor
+                              : AppColor.fontColor,
+                        )),
                   ),
-                ),
-              )
+                );
+              })
             ],
           ),
           Padding(
@@ -119,7 +136,7 @@ class VechiclesSuggestedWidget extends StatelessWidget {
                   color: Colors.grey,
                   margin: const EdgeInsets.only(top: 3),
                 ),
-                Spacer(),
+                const Spacer(),
                 Icon(
                   size: 16.r,
                   Icons.money,
